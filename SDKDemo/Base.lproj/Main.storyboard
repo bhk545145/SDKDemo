@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="0Ab-mE-lu1">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Item 2-->
+        <scene sceneID="5CC-Vc-aSK">
+            <objects>
+                <viewController id="S5c-k0-zkw" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kPP-mH-3oU"/>
+                        <viewControllerLayoutGuide type="bottom" id="cS9-UO-D5E"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="l3b-iv-d75">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 2" id="7B4-en-Wn7"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wYf-0k-HR1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="305" y="1778"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="Qpe-7k-Ded">
+            <objects>
+                <tabBarController id="0Ab-mE-lu1" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="Qth-Qt-7Vc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="Bc6-E7-hhG"/>
+                        <segue destination="89l-Ub-JqA" kind="relationship" relationship="viewControllers" id="1IW-YX-GtA"/>
+                        <segue destination="S5c-k0-zkw" kind="relationship" relationship="viewControllers" id="UiU-hO-DKO"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bdl-HM-irg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-515" y="1448"/>
+        </scene>
+        <!--接口测试-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iiX-w5-f6N">
+                                <rect key="frame" x="20" y="20" width="201" height="30"/>
+                                <state key="normal" title="SDKInit"/>
+                                <connections>
+                                    <action selector="SDKInit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eWj-LX-jrD"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fwZ-cz-SoC">
+                                <rect key="frame" x="20" y="78" width="201" height="30"/>
+                                <state key="normal" title="SDKAuth"/>
+                                <connections>
+                                    <action selector="SDKAuth:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GXf-CC-1Xt"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ewu-4f-5C7">
+                                <rect key="frame" x="20" y="142" width="201" height="30"/>
+                                <state key="normal" title="deviceEasyConfig"/>
+                                <connections>
+                                    <action selector="deviceEasyConfig:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Fmx-57-2Ed"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Qr-th-Kso">
+                                <rect key="frame" x="20" y="180" width="201" height="30"/>
+                                <state key="normal" title="deviceEasyConfigCancel"/>
+                                <connections>
+                                    <action selector="deviceEasyConfigCancel:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fnl-h4-yGZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hOb-pf-lTi">
+                                <rect key="frame" x="20" y="218" width="201" height="30"/>
+                                <state key="normal" title="deviceProbe"/>
+                                <connections>
+                                    <action selector="deviceProbe:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Rc2-X2-PH3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iun-g6-Qhe">
+                                <rect key="frame" x="20" y="256" width="201" height="30"/>
+                                <state key="normal" title="devicePair"/>
+                                <connections>
+                                    <action selector="devicePair:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WWh-hk-Zsc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="csM-HD-G6v">
+                                <rect key="frame" x="20" y="294" width="201" height="30"/>
+                                <state key="normal" title="deviceBindWithServer"/>
+                                <connections>
+                                    <action selector="deviceBindWithServer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9fb-0F-hRj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Ca-Aa-uxS">
+                                <rect key="frame" x="20" y="332" width="201" height="30"/>
+                                <state key="normal" title="deviceGetResourceToken"/>
+                                <connections>
+                                    <action selector="deviceGetResourceToken:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yJM-ic-bK8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U1E-YB-xzN">
+                                <rect key="frame" x="20" y="370" width="201" height="30"/>
+                                <state key="normal" title="deviceProfile"/>
+                                <connections>
+                                    <action selector="deviceProfile:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ICH-R1-T5f"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2TW-QY-VxZ">
+                                <rect key="frame" x="20" y="408" width="201" height="30"/>
+                                <state key="normal" title="dnaControl"/>
+                                <connections>
+                                    <action selector="dnaControl:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qSL-LE-n8q"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bhf-oW-DR5">
+                                <rect key="frame" x="20" y="110" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cpE-lq-0Gb">
+                                <rect key="frame" x="124" y="110" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="yzm157" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Kb-hM-bxC">
+                                <rect key="frame" x="20" y="52" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="yzm157.broadlink.com.cn" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xf9-zJ-IeH">
+                                <rect key="frame" x="124" y="52" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZfB-4X-WUe">
+                                <rect key="frame" x="0.0" y="435" width="600" height="113"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2yg-jJ-Rsr">
+                                <rect key="frame" x="534" y="408" width="46" height="30"/>
+                                <state key="normal" title="Clear"/>
+                                <connections>
+                                    <action selector="Clear:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EXO-EY-a72"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="2yg-jJ-Rsr" secondAttribute="bottom" constant="118" id="95a-T4-MIV"/>
+                            <constraint firstItem="ZfB-4X-WUe" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="QPG-R8-eh9"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ZfB-4X-WUe" secondAttribute="bottom" constant="8" id="Rmo-el-V9e"/>
+                            <constraint firstItem="ZfB-4X-WUe" firstAttribute="top" secondItem="2TW-QY-VxZ" secondAttribute="bottom" id="fuf-8T-3QV"/>
+                            <constraint firstItem="2yg-jJ-Rsr" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" constant="8" id="jNW-RN-17D"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ZfB-4X-WUe" secondAttribute="trailing" id="mWd-ui-hm6"/>
+                            <constraint firstItem="ZfB-4X-WUe" firstAttribute="top" secondItem="U1E-YB-xzN" secondAttribute="bottom" constant="35" id="wJR-O7-uz5"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="接口测试" id="fef-YH-NlB"/>
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="accountid" destination="1Kb-hM-bxC" id="imc-Hc-mpZ"/>
+                        <outlet property="accountsession" destination="Xf9-zJ-IeH" id="3MP-25-Z4R"/>
+                        <outlet property="nslogtext" destination="ZfB-4X-WUe" id="ZQH-vd-xRz"/>
+                        <outlet property="password" destination="cpE-lq-0Gb" id="Bmc-5d-ooa"/>
+                        <outlet property="ssid" destination="bhf-oW-DR5" id="fIh-UJ-R7e"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="305" y="418"/>
+        </scene>
+        <!--Root View Controller-->
+        <scene sceneID="ymN-uY-XUY">
+            <objects>
+                <tableViewController id="n1e-cB-oth" customClass="DeviceTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="w65-Ak-iUm">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="gVM-mN-s95">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gVM-mN-s95" id="qdC-3Y-euV">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="n1e-cB-oth" id="bFy-XX-8Li"/>
+                            <outlet property="delegate" destination="n1e-cB-oth" id="q5a-Im-gqf"/>
+                        </connections>
+                    </tableView>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="bkG-Bp-CoV">
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="Iyq-OI-RW4">
+                            <connections>
+                                <action selector="Refreshbtn:" destination="n1e-cB-oth" id="vQc-IO-w1e"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mhk-f2-yYf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="984" y="1148"/>
+        </scene>
+        <!--设备列表-->
+        <scene sceneID="nnO-G4-WsW">
+            <objects>
+                <navigationController id="89l-Ub-JqA" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="设备列表" id="asJ-4t-de9"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="VfU-kx-6nk">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="n1e-cB-oth" kind="relationship" relationship="rootViewController" id="DTJ-MR-KtM"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X8B-Yb-m5i" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="305" y="1148"/>
+        </scene>
+    </scenes>
+</document>
