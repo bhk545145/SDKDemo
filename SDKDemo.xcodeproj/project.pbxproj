@@ -14,6 +14,7 @@
 		0288E7691CCF547600DBED87 /* MBProgressHUD+MJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 0288E7651CCF547600DBED87 /* MBProgressHUD+MJ.m */; };
 		0288E76A1CCF547600DBED87 /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0288E7661CCF547600DBED87 /* MBProgressHUD.bundle */; };
 		0288E76B1CCF547600DBED87 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 0288E7681CCF547600DBED87 /* MBProgressHUD.m */; };
+		02D020101CD993D50032F8FE /* DeviceControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 02D0200F1CD993D50032F8FE /* DeviceControl.m */; };
 		1F241E851BFADED000DA6997 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F241E841BFADED000DA6997 /* CoreTelephony.framework */; };
 		1F5572B31BD0EB780088B3FC /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F55725C1BD0EB780088B3FC /* ASIAuthenticationDialog.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		1F5572B41BD0EB780088B3FC /* ASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F55725F1BD0EB780088B3FC /* ASIDataCompressor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -69,6 +70,8 @@
 		0288E7671CCF547600DBED87 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		0288E7681CCF547600DBED87 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		0288E7701CCF640000DBED87 /* bhkcommon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bhkcommon.h; sourceTree = "<group>"; };
+		02D0200E1CD993D50032F8FE /* DeviceControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceControl.h; sourceTree = "<group>"; };
+		02D0200F1CD993D50032F8FE /* DeviceControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceControl.m; sourceTree = "<group>"; };
 		1F241E841BFADED000DA6997 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		1F55725B1BD0EB780088B3FC /* ASIAuthenticationDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIAuthenticationDialog.h; sourceTree = "<group>"; };
 		1F55725C1BD0EB780088B3FC /* ASIAuthenticationDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIAuthenticationDialog.m; sourceTree = "<group>"; };
@@ -185,6 +188,8 @@
 			children = (
 				026B19931CD30B9C00E41998 /* DeviceTableViewController.h */,
 				026B19941CD30B9C00E41998 /* DeviceTableViewController.m */,
+				02D0200E1CD993D50032F8FE /* DeviceControl.h */,
+				02D0200F1CD993D50032F8FE /* DeviceControl.m */,
 			);
 			name = controller;
 			sourceTree = "<group>";
@@ -498,6 +503,7 @@
 				026B19951CD30B9C00E41998 /* DeviceTableViewController.m in Sources */,
 				1FE95D261BD092E4001CA311 /* AppDelegate.m in Sources */,
 				1F5572C51BD0EB780088B3FC /* ASIS3BucketRequest.m in Sources */,
+				02D020101CD993D50032F8FE /* DeviceControl.m in Sources */,
 				1F5572BF1BD0EB780088B3FC /* ASICloudFilesContainerXMLParserDelegate.m in Sources */,
 				1F5572BE1BD0EB780088B3FC /* ASICloudFilesContainerRequest.m in Sources */,
 				1F5572B91BD0EB780088B3FC /* ASIInputStream.m in Sources */,

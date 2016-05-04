@@ -13,11 +13,13 @@
 #import "bhkcommon.h"
 #import "ASIFormDataRequest.h"
 #import <CommonCrypto/CommonDigest.h>
+#import "DeviceControl.h"
 
-@interface DeviceTableViewController()<UITableViewDelegate,UITableViewDataSource>{
+@interface DeviceTableViewController()<UITableViewDelegate,UITableViewDataSource,UIAlertViewDelegate>{
     dispatch_queue_t networkQueue;
     NetworkAPI *api;
     NSString *filepathFolder;
+    UIAlertView *alert;
 }
 @property (nonatomic,strong) NSMutableArray *deviceArray;
 @end
@@ -74,7 +76,10 @@
     
     [_deviceArray removeAllObjects];
     [_deviceArray addObjectsFromArray:array];
-    [self.tableView reloadData];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.tableView reloadData];
+        
+    });
 }
 
 #pragma mark - Table view data source
@@ -97,7 +102,7 @@
     BLDeviceInfo *info = [[BLDeviceInfo alloc]init];
     info = _deviceArray[indexPath.row];
     cell.textLabel.text = info.name;
-    cell.detailTextLabel.text = info.devicekey;
+    cell.detailTextLabel.text = info.mac;
     return cell;
 }
 
@@ -107,7 +112,8 @@
     NSData *devData = [NSJSONSerialization dataWithJSONObject:info.allkeys options:NSJSONWritingPrettyPrinted error:nil];
     //设备配对
     [self devicePair:[[NSString alloc] initWithData:devData encoding:NSUTF8StringEncoding] desc:@"{}" info:info];
-    
+    alert = [[UIAlertView alloc]init];
+    alert.tag = indexPath.row;
 }
 //刷新
 - (IBAction)Refreshbtn:(id)sender {
@@ -121,16 +127,32 @@
         NSData *responseData = [requestData dataUsingEncoding:NSUTF8StringEncoding];
         if ([[[responseData objectFromJSONData] objectForKey:@"status"] intValue] == 0) {
             NSLog(@"%@",requestData);
-            NSString *did = [[responseData objectFromJSONData] objectForKey:@"id"];
-            NSString *key = [[responseData objectFromJSONData] objectForKey:@"key"];
-            info.deviceid = did;
-            info.devicekey = key;
+            info.deviceid = [[responseData objectFromJSONData] objectForKey:@"id"];
+            info.devicekey = [[responseData objectFromJSONData] objectForKey:@"key"];
+            [info.allkeys setObject:info.deviceid forKey:@"id"];
+            [info.allkeys setObject:info.devicekey forKey:@"key"];
+            NSData *devData = [NSJSONSerialization dataWithJSONObject:info.allkeys options:NSJSONWritingPrettyPrinted error:nil];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                alert = [alert initWithTitle:@"产品信息展示" message:[[NSString alloc] initWithData:devData encoding:NSUTF8StringEncoding] delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+                [alert show];
+            });
             //下载脚本
             [self deviceGetResourceToken:ACCOUNT_ID accountsession:ACCOUNT_SESSION productpid:info.pid resourcestype:@1 data:[NSDictionary dictionary] info:info];
         }else{
             NSLog(@"%@",requestData);
         }
     });
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 1) {
+        DeviceControl *devicecontrol = [[DeviceControl alloc]init];
+        BLDeviceInfo *info = _deviceArray[alertView.tag];
+        devicecontrol.BLDeviceinfo = info;
+        [self.navigationController pushViewController:devicecontrol animated:YES];
+    }
+
 }
 
 //绑定设备
@@ -233,13 +255,14 @@
     return output;
 }
 
+//获取设备的 profile 信息
 - (void)deviceProfile:(NSDictionary *)dic subdev:(NSString *)subdevInfo desc:(NSString *)descStr{
     dispatch_async(networkQueue, ^{
         NSData *devData = [NSJSONSerialization dataWithJSONObject:dic options:NSJSONWritingPrettyPrinted error:nil];
         NSString *devProfileResult = [api deviceProfile:[[NSString alloc] initWithData:devData encoding:NSUTF8StringEncoding] subdev:subdevInfo desc:descStr];
         NSDictionary *devProfileDic = [NSJSONSerialization JSONObjectWithData:[devProfileResult dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableLeaves error:nil];
         NSDictionary *selectDevProfile = devProfileDic[@"profile"];
-        [self dnaControl:[[NSString alloc] initWithData:devData encoding:NSUTF8StringEncoding] subdev:nil data:@"{\"data\":\"YWFhYWJiYmJi\"}" desc:[NSString stringWithFormat:@"{\"command\":\"dev_passthrough\", \"cookie\":\"\", \"netmode\":1, \"account_id\":\"%@\"}", ACCOUNT_ID]];
+        NSLog(@"%@",selectDevProfile);
     });
 }
 
