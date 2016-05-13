@@ -14,6 +14,7 @@
     if (self = [super init]) {
         _did = dict[@"did"];
         _mac = dict[@"mac"];
+        _type = [dict[@"type"]unsignedIntValue];
         _pid = dict[@"pid"];
         _name = dict[@"name"];
         _lock = [dict[@"lock"]boolValue];

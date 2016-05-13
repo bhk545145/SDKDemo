@@ -9,12 +9,16 @@
 /* Begin PBXBuildFile section */
 		021AFCB41CD375B400418071 /* BLDeviceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 021AFCB31CD375B400418071 /* BLDeviceInfo.m */; };
 		026B19951CD30B9C00E41998 /* DeviceTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 026B19941CD30B9C00E41998 /* DeviceTableViewController.m */; };
+		026B1C581CE18AB80002719D /* Devicecell.m in Sources */ = {isa = PBXBuildFile; fileRef = 026B1C571CE18AB80002719D /* Devicecell.m */; };
+		026B1C5A1CE190080002719D /* View.xib in Resources */ = {isa = PBXBuildFile; fileRef = 026B1C591CE190080002719D /* View.xib */; };
+		026B1C5D1CE1C00D0002719D /* UIImage+MJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 026B1C5C1CE1C00D0002719D /* UIImage+MJ.m */; };
+		027283FC1CDB1FEE00410F7E /* BLDeviceService.m in Sources */ = {isa = PBXBuildFile; fileRef = 027283FB1CDB1FEE00410F7E /* BLDeviceService.m */; };
 		0288E75D1CCF3C8C00DBED87 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 0288E75C1CCF3C8C00DBED87 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		0288E7611CCF416400DBED87 /* getCurrentWiFiSSID.m in Sources */ = {isa = PBXBuildFile; fileRef = 0288E7601CCF416400DBED87 /* getCurrentWiFiSSID.m */; };
 		0288E7691CCF547600DBED87 /* MBProgressHUD+MJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 0288E7651CCF547600DBED87 /* MBProgressHUD+MJ.m */; };
 		0288E76A1CCF547600DBED87 /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0288E7661CCF547600DBED87 /* MBProgressHUD.bundle */; };
 		0288E76B1CCF547600DBED87 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 0288E7681CCF547600DBED87 /* MBProgressHUD.m */; };
-		02D020101CD993D50032F8FE /* DeviceControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 02D0200F1CD993D50032F8FE /* DeviceControl.m */; };
+		02D020101CD993D50032F8FE /* SPDeviceControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 02D0200F1CD993D50032F8FE /* SPDeviceControl.m */; };
 		1F241E851BFADED000DA6997 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F241E841BFADED000DA6997 /* CoreTelephony.framework */; };
 		1F5572B31BD0EB780088B3FC /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F55725C1BD0EB780088B3FC /* ASIAuthenticationDialog.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		1F5572B41BD0EB780088B3FC /* ASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F55725F1BD0EB780088B3FC /* ASIDataCompressor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -60,6 +64,13 @@
 		021AFCB31CD375B400418071 /* BLDeviceInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLDeviceInfo.m; sourceTree = "<group>"; };
 		026B19931CD30B9C00E41998 /* DeviceTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceTableViewController.h; sourceTree = "<group>"; };
 		026B19941CD30B9C00E41998 /* DeviceTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceTableViewController.m; sourceTree = "<group>"; };
+		026B1C561CE18AB80002719D /* Devicecell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Devicecell.h; sourceTree = "<group>"; };
+		026B1C571CE18AB80002719D /* Devicecell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Devicecell.m; sourceTree = "<group>"; };
+		026B1C591CE190080002719D /* View.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = View.xib; sourceTree = "<group>"; };
+		026B1C5B1CE1C00D0002719D /* UIImage+MJ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+MJ.h"; path = "ASIHttpRequest/UIImage+MJ.h"; sourceTree = "<group>"; };
+		026B1C5C1CE1C00D0002719D /* UIImage+MJ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+MJ.m"; path = "ASIHttpRequest/UIImage+MJ.m"; sourceTree = "<group>"; };
+		027283FA1CDB1FEE00410F7E /* BLDeviceService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLDeviceService.h; sourceTree = "<group>"; };
+		027283FB1CDB1FEE00410F7E /* BLDeviceService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLDeviceService.m; sourceTree = "<group>"; };
 		0288E75B1CCF3C8C00DBED87 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
 		0288E75C1CCF3C8C00DBED87 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
 		0288E75F1CCF416400DBED87 /* getCurrentWiFiSSID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = getCurrentWiFiSSID.h; sourceTree = "<group>"; };
@@ -70,8 +81,8 @@
 		0288E7671CCF547600DBED87 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		0288E7681CCF547600DBED87 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		0288E7701CCF640000DBED87 /* bhkcommon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bhkcommon.h; sourceTree = "<group>"; };
-		02D0200E1CD993D50032F8FE /* DeviceControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceControl.h; sourceTree = "<group>"; };
-		02D0200F1CD993D50032F8FE /* DeviceControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceControl.m; sourceTree = "<group>"; };
+		02D0200E1CD993D50032F8FE /* SPDeviceControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPDeviceControl.h; sourceTree = "<group>"; };
+		02D0200F1CD993D50032F8FE /* SPDeviceControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPDeviceControl.m; sourceTree = "<group>"; };
 		1F241E841BFADED000DA6997 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		1F55725B1BD0EB780088B3FC /* ASIAuthenticationDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIAuthenticationDialog.h; sourceTree = "<group>"; };
 		1F55725C1BD0EB780088B3FC /* ASIAuthenticationDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIAuthenticationDialog.m; sourceTree = "<group>"; };
@@ -188,8 +199,8 @@
 			children = (
 				026B19931CD30B9C00E41998 /* DeviceTableViewController.h */,
 				026B19941CD30B9C00E41998 /* DeviceTableViewController.m */,
-				02D0200E1CD993D50032F8FE /* DeviceControl.h */,
-				02D0200F1CD993D50032F8FE /* DeviceControl.m */,
+				02D0200E1CD993D50032F8FE /* SPDeviceControl.h */,
+				02D0200F1CD993D50032F8FE /* SPDeviceControl.m */,
 			);
 			name = controller;
 			sourceTree = "<group>";
@@ -199,6 +210,8 @@
 			children = (
 				021AFCB21CD375B400418071 /* BLDeviceInfo.h */,
 				021AFCB31CD375B400418071 /* BLDeviceInfo.m */,
+				027283FA1CDB1FEE00410F7E /* BLDeviceService.h */,
+				027283FB1CDB1FEE00410F7E /* BLDeviceService.m */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -206,8 +219,20 @@
 		026B198F1CD3079300E41998 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				026B1C561CE18AB80002719D /* Devicecell.h */,
+				026B1C571CE18AB80002719D /* Devicecell.m */,
+				026B1C591CE190080002719D /* View.xib */,
 			);
 			name = view;
+			sourceTree = "<group>";
+		};
+		026B1C5E1CE1C01F0002719D /* UIImage */ = {
+			isa = PBXGroup;
+			children = (
+				026B1C5B1CE1C00D0002719D /* UIImage+MJ.h */,
+				026B1C5C1CE1C00D0002719D /* UIImage+MJ.m */,
+			);
+			name = UIImage;
 			sourceTree = "<group>";
 		};
 		0288E75E1CCF3C9300DBED87 /* JSONKit */ = {
@@ -249,6 +274,7 @@
 				0288E7621CCF416900DBED87 /* getCurrentWiFiSSID */,
 				0288E75E1CCF3C9300DBED87 /* JSONKit */,
 				1F5572591BD0EB780088B3FC /* ASIHttpRequest */,
+				026B1C5E1CE1C01F0002719D /* UIImage */,
 				0288E7701CCF640000DBED87 /* bhkcommon.h */,
 			);
 			path = 3rd;
@@ -478,6 +504,7 @@
 				1FE95D2E1BD092E4001CA311 /* Assets.xcassets in Resources */,
 				0288E76A1CCF547600DBED87 /* MBProgressHUD.bundle in Resources */,
 				1FE95D2C1BD092E4001CA311 /* Main.storyboard in Resources */,
+				026B1C5A1CE190080002719D /* View.xib in Resources */,
 				1F5572D81BD0EB780088B3FC /* README-GHUnit in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -503,13 +530,15 @@
 				026B19951CD30B9C00E41998 /* DeviceTableViewController.m in Sources */,
 				1FE95D261BD092E4001CA311 /* AppDelegate.m in Sources */,
 				1F5572C51BD0EB780088B3FC /* ASIS3BucketRequest.m in Sources */,
-				02D020101CD993D50032F8FE /* DeviceControl.m in Sources */,
+				02D020101CD993D50032F8FE /* SPDeviceControl.m in Sources */,
 				1F5572BF1BD0EB780088B3FC /* ASICloudFilesContainerXMLParserDelegate.m in Sources */,
 				1F5572BE1BD0EB780088B3FC /* ASICloudFilesContainerRequest.m in Sources */,
+				027283FC1CDB1FEE00410F7E /* BLDeviceService.m in Sources */,
 				1F5572B91BD0EB780088B3FC /* ASIInputStream.m in Sources */,
 				1F5572C21BD0EB780088B3FC /* ASICloudFilesRequest.m in Sources */,
 				1F5572BB1BD0EB780088B3FC /* ASIWebPageRequest.m in Sources */,
 				021AFCB41CD375B400418071 /* BLDeviceInfo.m in Sources */,
+				026B1C5D1CE1C00D0002719D /* UIImage+MJ.m in Sources */,
 				1F5572BD1BD0EB780088B3FC /* ASICloudFilesContainer.m in Sources */,
 				1F5572C11BD0EB780088B3FC /* ASICloudFilesObjectRequest.m in Sources */,
 				1FE95D231BD092E4001CA311 /* main.m in Sources */,
@@ -522,6 +551,7 @@
 				1F5572C01BD0EB780088B3FC /* ASICloudFilesObject.m in Sources */,
 				1F5572B61BD0EB780088B3FC /* ASIDownloadCache.m in Sources */,
 				1F5572D91BD0EB780088B3FC /* Reachability.m in Sources */,
+				026B1C581CE18AB80002719D /* Devicecell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -23,4 +23,27 @@
 
 #define FILTER_PID          @"00000000000000000000000090650000"
 
+#pragma mark -
+#pragma mark - log信息函数预定义
+#ifdef DEBUG
+#define DLog(fmt, ...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
+#else
+#define DLog(...)
+#endif
+#define ALog(fmt, ...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
+
+
+// 设备代号
+#define SPmini 10016
+#define SPminiv2 10024
+#define SP2 10001
+#define RM 10002
+#define A1 10004
+#define MS1 10015
+#define S1 10018
+#define RMplus 10026
+#define RM3mini  10039
+
+// 获得RGB颜色
+#define IWColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
 #endif /* bhkcommon_h */

@@ -13,7 +13,8 @@
 #import "bhkcommon.h"
 #import "ASIFormDataRequest.h"
 #import <CommonCrypto/CommonDigest.h>
-#import "DeviceControl.h"
+#import "SPDeviceControl.h"
+#import "Devicecell.h"
 
 @interface DeviceTableViewController()<UITableViewDelegate,UITableViewDataSource,UIAlertViewDelegate>{
     dispatch_queue_t networkQueue;
@@ -32,6 +33,9 @@
     _deviceArray = [[NSMutableArray alloc]init];
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     filepathFolder = [paths objectAtIndex:0];
+    //隐藏tableView分割线
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.tableView.backgroundColor = IWColor(226, 226, 226);
     [self deviceProbe];
 }
 //获取局域网信息
@@ -40,11 +44,10 @@
         NSString *requestData = [api deviceProbe:nil];
         NSData *responseData = [requestData dataUsingEncoding:NSUTF8StringEncoding];
         if ([[[responseData objectFromJSONData] objectForKey:@"status"] intValue] == 0) {
-            NSLog(@"%@",requestData);
             NSArray *devicelist = [[responseData objectFromJSONData] objectForKey:@"list"];
             [self devicelist:devicelist];
         }else{
-            NSLog(@"%@",requestData);
+            DLog(@"%@",requestData);
         }
     });
 }
@@ -94,16 +97,22 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    NSString *CellIdentifier = @"CellIdentifier";
+    Devicecell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+        NSArray *cellarray = [[NSBundle mainBundle]loadNibNamed:@"View" owner:nil options:nil];
+        cell = [cellarray lastObject];
     }
     BLDeviceInfo *info = [[BLDeviceInfo alloc]init];
     info = _deviceArray[indexPath.row];
-    cell.textLabel.text = info.name;
-    cell.detailTextLabel.text = info.mac;
+    cell.BLDeviceinfo = info;
+//    cell.textLabel.text = info.name;
+//    cell.detailTextLabel.text = info.mac;
     return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 130;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -126,7 +135,7 @@
         NSString *requestData = [api devicePair:devInfo desc:descStr];
         NSData *responseData = [requestData dataUsingEncoding:NSUTF8StringEncoding];
         if ([[[responseData objectFromJSONData] objectForKey:@"status"] intValue] == 0) {
-            NSLog(@"%@",requestData);
+            DLog(@"%@",requestData);
             info.deviceid = [[responseData objectFromJSONData] objectForKey:@"id"];
             info.devicekey = [[responseData objectFromJSONData] objectForKey:@"key"];
             [info.allkeys setObject:info.deviceid forKey:@"id"];
@@ -139,7 +148,8 @@
             //下载脚本
             [self deviceGetResourceToken:ACCOUNT_ID accountsession:ACCOUNT_SESSION productpid:info.pid resourcestype:@1 data:[NSDictionary dictionary] info:info];
         }else{
-            NSLog(@"%@",requestData);
+            DLog(@"%@",requestData);
+            
         }
     });
 }
@@ -147,10 +157,12 @@
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     if (buttonIndex == 1) {
-        DeviceControl *devicecontrol = [[DeviceControl alloc]init];
         BLDeviceInfo *info = _deviceArray[alertView.tag];
-        devicecontrol.BLDeviceinfo = info;
-        [self.navigationController pushViewController:devicecontrol animated:YES];
+        if(info.type == 10024 || info.type == 10016 || info.type == 10001){
+            SPDeviceControl *devicecontrol = [[SPDeviceControl alloc]init];
+            devicecontrol.BLDeviceinfo = info;
+            [self.navigationController pushViewController:devicecontrol animated:YES];
+        }
     }
 
 }
@@ -170,9 +182,9 @@
         NSString *requestData = [api deviceBindWithServer:[[NSString alloc] initWithData:descData encoding:NSUTF8StringEncoding] desc:descStr];
         NSData *responseData = [requestData dataUsingEncoding:NSUTF8StringEncoding];
         if ([[[responseData objectFromJSONData] objectForKey:@"status"] intValue] == 0) {
-            NSLog(@"%@",requestData);
+            DLog(@"%@",requestData);
         }else{
-            NSLog(@"%@",requestData);
+            DLog(@"%@",requestData);
         }
     });
 }
@@ -190,13 +202,13 @@
         NSString *requestData = [api deviceGetResourcesToken:[[NSString alloc] initWithData:descData encoding:NSUTF8StringEncoding] desc:[NSString stringWithFormat:@"{\"account_id\":\"%@\"}", ACCOUNT_ID]];
         NSData *responseData = [requestData dataUsingEncoding:NSUTF8StringEncoding];
         if ([[[responseData objectFromJSONData] objectForKey:@"status"] intValue] == 0) {
-            NSLog(@"%@",requestData);
+            DLog(@"%@",requestData);
             dispatch_async(dispatch_get_main_queue(), ^{
                 NSString *downloadUrl = [[[responseData objectFromJSONData]objectForKey:@"data"] objectForKey:@"url"];
                 [self download:downloadUrl pid:productpid info:info];
             });
         }else{
-            NSLog(@"%@",requestData);
+            DLog(@"%@",requestData);
         }
     });
 }
@@ -222,7 +234,7 @@
         if (reqblock.responseStatusCode == 200)
         {
             NSString *filepath = [filepathFolder stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.script", pid]];
-            NSLog(@"filepath: %@", filepath);
+            DLog(@"filepath: %@", filepath);
             if ([reqblock.responseData writeToFile:filepath atomically:YES])
             {
                 //获取设备的 profile 信息
@@ -262,12 +274,7 @@
         NSString *devProfileResult = [api deviceProfile:[[NSString alloc] initWithData:devData encoding:NSUTF8StringEncoding] subdev:subdevInfo desc:descStr];
         NSDictionary *devProfileDic = [NSJSONSerialization JSONObjectWithData:[devProfileResult dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableLeaves error:nil];
         NSDictionary *selectDevProfile = devProfileDic[@"profile"];
-        NSLog(@"%@",selectDevProfile);
+        DLog(@"%@",selectDevProfile);
     });
-}
-
-- (void)dnaControl:(NSString *)devInfo subdev:(NSString *)subdevInfo data:(NSString *)dataStr desc:(NSString *)descStr{
-    NSString *result = [api dnaControl:devInfo subdev:subdevInfo data:dataStr desc:descStr];
-    NSLog(@"%@",result);
 }
 @end

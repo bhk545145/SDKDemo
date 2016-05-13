@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 @class BLDeviceInfo;
-@interface DeviceControl : UIViewController
+@interface SPDeviceControl : UIViewController
 @property (strong,nonatomic) BLDeviceInfo *BLDeviceinfo;
 @end

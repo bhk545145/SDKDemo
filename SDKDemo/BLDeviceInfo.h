@@ -12,6 +12,7 @@
 
 @property (nonatomic, strong) NSString *did;
 @property (nonatomic, strong) NSString *mac;
+@property (nonatomic, assign) int type;
 @property (nonatomic, strong) NSString *pid;
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, assign) BOOL lock;

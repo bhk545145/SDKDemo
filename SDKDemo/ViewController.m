@@ -73,10 +73,10 @@
         NSString *requestData = [api SDKInit:[[NSString alloc] initWithData:descData encoding:NSUTF8StringEncoding]];
         NSData *responseData = [requestData dataUsingEncoding:NSUTF8StringEncoding];
         if ([[[responseData objectFromJSONData] objectForKey:@"status"] intValue] == 0) {
-            NSLog(@"%@",requestData);
+            DLog(@"%@",requestData);
             [self NSlogNSdata:responseData];
         }else{
-            NSLog(@"%@",requestData);
+            DLog(@"%@",requestData);
             [self NSlogNSdata:responseData];
         }
     });
@@ -93,10 +93,10 @@
         NSString *requestData = [api SDKAuth:[[NSString alloc] initWithData:descData encoding:NSUTF8StringEncoding]];
         NSData *responseData = [requestData dataUsingEncoding:NSUTF8StringEncoding];
         if ([[[responseData objectFromJSONData] objectForKey:@"status"] intValue] == 0) {
-            NSLog(@"%@",requestData);
+            DLog(@"%@",requestData);
             [self NSlogNSdata:responseData];
         }else{
-            NSLog(@"%@",requestData);
+            DLog(@"%@",requestData);
             [self NSlogNSdata:responseData];
         }
     });
@@ -117,14 +117,14 @@
         NSString *requestData = [api deviceEasyConfig:[[NSString alloc] initWithData:descData encoding:NSUTF8StringEncoding]];
         NSData *responseData = [requestData dataUsingEncoding:NSUTF8StringEncoding];
         if ([[[responseData objectFromJSONData] objectForKey:@"status"] intValue] == 0) {
-            NSLog(@"%@",requestData);
+            DLog(@"%@",requestData);
             [self NSlogNSdata:responseData];
             dispatch_async(dispatch_get_main_queue(), ^{
                 [hub hide:YES];
                 [MBProgressHUD showSuccess:@"配置成功" toView:progressview];
             });
         }else{
-            NSLog(@"%@",requestData);
+            DLog(@"%@",requestData);
             dispatch_async(dispatch_get_main_queue(), ^{
                 [hub hide:YES];
                 [MBProgressHUD showSuccess:@"配置失败" toView:progressview];
@@ -138,10 +138,10 @@
         NSString *requestData = [api deviceEasyConfigCancel];
         NSData *responseData = [requestData dataUsingEncoding:NSUTF8StringEncoding];
         if ([[[responseData objectFromJSONData] objectForKey:@"status"] intValue] == 0) {
-            NSLog(@"%@",requestData);
+            DLog(@"%@",requestData);
             [self NSlogNSdata:responseData];
         }else{
-            NSLog(@"%@",requestData);
+            DLog(@"%@",requestData);
             [self NSlogNSdata:responseData];
         }
     });
@@ -152,11 +152,11 @@
         NSString *requestData = [api deviceProbe:nil];
         NSData *responseData = [requestData dataUsingEncoding:NSUTF8StringEncoding];
         if ([[[responseData objectFromJSONData] objectForKey:@"status"] intValue] == 0) {
-            NSLog(@"%@",requestData);
+            DLog(@"%@",requestData);
             [self NSlogNSdata:responseData];
             deviceList = [[responseData objectFromJSONData] objectForKey:@"list"];
         }else{
-            NSLog(@"%@",requestData);
+            DLog(@"%@",requestData);
             [self NSlogNSdata:responseData];
         }
     });
@@ -167,7 +167,7 @@
         NSString *requestData = [api devicePair:devInfo desc:descStr];
         NSData *responseData = [requestData dataUsingEncoding:NSUTF8StringEncoding];
         if ([[[responseData objectFromJSONData] objectForKey:@"status"] intValue] == 0) {
-            NSLog(@"%@",requestData);
+            DLog(@"%@",requestData);
             [self NSlogNSdata:responseData];
             id did = [[responseData objectFromJSONData] objectForKey:@"id"];
             id key = [[responseData objectFromJSONData] objectForKey:@"key"];
@@ -176,7 +176,7 @@
             [deviceList setValue:did forKey:@"id"];
             [deviceList setValue:key forKey:@"key"];
         }else{
-            NSLog(@"%@",requestData);
+            DLog(@"%@",requestData);
             [self NSlogNSdata:responseData];
         }
     });
@@ -196,10 +196,10 @@
         NSString *requestData = [api deviceBindWithServer:[[NSString alloc] initWithData:descData encoding:NSUTF8StringEncoding] desc:descStr];
         NSData *responseData = [requestData dataUsingEncoding:NSUTF8StringEncoding];
         if ([[[responseData objectFromJSONData] objectForKey:@"status"] intValue] == 0) {
-            NSLog(@"%@-----%@",requestData,devlist);
+            DLog(@"%@-----%@",requestData,devlist);
             [self NSlogNSdata:responseData];
         }else{
-            NSLog(@"%@-----%@",requestData,devlist);
+            DLog(@"%@-----%@",requestData,devlist);
             [self NSlogNSdata:responseData];
         }
     });
@@ -218,14 +218,14 @@
         NSString *requestData = [api deviceGetResourcesToken:[[NSString alloc] initWithData:descData encoding:NSUTF8StringEncoding] desc:[NSString stringWithFormat:@"{\"account_id\":\"%@\"}", self.accountid.text]];
         NSData *responseData = [requestData dataUsingEncoding:NSUTF8StringEncoding];
         if ([[[responseData objectFromJSONData] objectForKey:@"status"] intValue] == 0) {
-            NSLog(@"%@",requestData);
+            DLog(@"%@",requestData);
             [self NSlogNSdata:responseData];
             dispatch_async(dispatch_get_main_queue(), ^{
                 NSString *downloadUrl = [[[responseData objectFromJSONData]objectForKey:@"data"] objectForKey:@"url"];
                 [self download:downloadUrl pid:productpid];
             });
         }else{
-            NSLog(@"%@",requestData);
+            DLog(@"%@",requestData);
             [self NSlogNSdata:responseData];
         }
     });
@@ -235,10 +235,10 @@
     dispatch_async(networkQueue, ^{
         NSData *devData = [NSJSONSerialization dataWithJSONObject:dic options:NSJSONWritingPrettyPrinted error:nil];
         NSString *devProfileResult = [api deviceProfile:[[NSString alloc] initWithData:devData encoding:NSUTF8StringEncoding] subdev:subdevInfo desc:descStr];
-        NSLog(@"devProfileResult: %@", devProfileResult);
+        DLog(@"devProfileResult: %@", devProfileResult);
         NSDictionary *devProfileDic = [NSJSONSerialization JSONObjectWithData:[devProfileResult dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableLeaves error:nil];
         selectDevProfile = devProfileDic[@"profile"];
-        NSLog(@"profile: %@", selectDevProfile);
+        DLog(@"profile: %@", selectDevProfile);
         [self NSlogNSString:devProfileResult];
     });
 }
@@ -332,8 +332,7 @@
 //        NSLog(@"ctrlStr: %@", ctrlStr);
 //        NSString *dnaControlResult = [api dnaControl:[[NSString alloc] initWithData:devData encoding:NSUTF8StringEncoding] subdev:nil data:ctrlStr desc:[NSString stringWithFormat:@"{\"command\":\"dev_ctrl\", \"cookie\":\"\", \"netmode\":1, \"account_id\":\"%@\"}", ACCOUNT_ID]];
         NSString *dnaControlResult = [api dnaControl:[[NSString alloc] initWithData:devData encoding:NSUTF8StringEncoding] subdev:nil data:@"{\"data\":\"YWFhYWJiYmJi\"}" desc:[NSString stringWithFormat:@"{\"command\":\"dev_passthrough\", \"cookie\":\"\", \"netmode\":1, \"account_id\":\"%@\"}", self.accountid.text]];
-        
-        NSLog(@"dnaControlResult: %@", dnaControlResult);
+        DLog(@"dnaControlResult: %@", dnaControlResult);
         [self NSlogNSString:dnaControlResult];
     });
     
@@ -378,7 +377,7 @@
             NSLog(@"filepath: %@", filepath);
             if ([reqblock.responseData writeToFile:filepath atomically:YES])
             {
-                NSLog(@"success");
+                DLog(@"success");
             }
         }
         else
