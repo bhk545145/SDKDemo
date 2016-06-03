@@ -34,6 +34,8 @@
 
 - (NSString *)deviceProfile:(NSString *)devInfo subdev:(NSString *)subdevInfo desc:(NSString *)descStr;
 
+- (NSString *)deviceProfile2:(NSString *)pidStr desc:(NSString *)descStr;
+
 - (NSString *)dnaControl:(NSString *)devInfo subdev:(NSString *)subdevInfo data:(NSString *)dataStr desc:(NSString *)descStr;
 
 @end
