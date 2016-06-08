@@ -33,5 +33,15 @@
  *  @param block        返回结果
  */
 - (void)dev_ctrlonoff:(BLDeviceInfo *)BLDeviceInfo status:(int)status andBlock:(void(^)(BOOL ret, NSDictionary *dic))block;
+/**
+ *  插座当前时间
+ *
+ *  @param BLDeviceInfo 设备模型
+ *  @param params       params参数
+ *  @param block        返回结果
+ */
 - (void)dev_ctrlget:(BLDeviceInfo *)BLDeviceInfo params:(NSString *)params andBlock:(void(^)(BOOL ret, NSDictionary *dic))block;
+
+
+- (void)RMdev_ctrl:(BLDeviceInfo *)BLDeviceInfo params:(NSString *)params andBlock:(void(^)(BOOL ret, NSDictionary *dic))block;
 @end

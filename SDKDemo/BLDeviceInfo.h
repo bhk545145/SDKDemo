@@ -22,6 +22,7 @@
 @property (nonatomic, strong) NSObject *extend;
 @property (nonatomic, strong) NSString *deviceid;
 @property (nonatomic, strong) NSString *devicekey;
+@property (nonatomic, strong) NSString *downloadurl;
 @property (nonatomic, strong) NSMutableDictionary *allkeys;
 
 - (id)initWithDict:(NSDictionary *)dict;

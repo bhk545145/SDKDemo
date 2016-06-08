@@ -21,7 +21,6 @@
 #define ACCOUNT_ID          @"yzm157"
 #define ACCOUNT_SESSION     @"yzm157.broadlink.com.cn"
 
-#define FILTER_PID          @"00000000000000000000000090650000"
 
 #pragma mark -
 #pragma mark - log信息函数预定义

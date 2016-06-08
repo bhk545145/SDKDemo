@@ -63,7 +63,7 @@
 }
 
 - (void)SDKInit:(NSString *)filepath localctrl:(NSNumber *)localctrl loglevel:(NSNumber *)loglevel{
-    dispatch_async(networkQueue, ^{
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
         [dic setObject:filepath forKey:@"filepath"];
         [dic setObject:localctrl forKey:@"localctrl"];
@@ -149,7 +149,13 @@
 
 - (void)deviceProbe{
     dispatch_async(networkQueue, ^{
-        NSString *requestData = [api deviceProbe:nil];
+        NSDictionary *dic = @{
+                              @"scantime"      : @3000,
+                              @"scaninterval"  : @150
+                              
+                              };
+        NSData *descData = [NSJSONSerialization dataWithJSONObject:dic options:NSJSONWritingPrettyPrinted error:nil];
+        NSString *requestData = [api deviceProbe:[[NSString alloc] initWithData:descData encoding:NSUTF8StringEncoding]];
         NSData *responseData = [requestData dataUsingEncoding:NSUTF8StringEncoding];
         if ([[[responseData objectFromJSONData] objectForKey:@"status"] intValue] == 0) {
             DLog(@"%@",requestData);
@@ -373,10 +379,12 @@
     [request setCompletionBlock:^{
         if (reqblock.responseStatusCode == 200)
         {
+            DLog(@"%@",[reqblock.responseData objectFromJSONData]);
             NSString *filepath = [filepathFolder stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.script", pid]];
-            NSLog(@"filepath: %@", filepath);
+            DLog(@"filepath: %@", filepath);
             if ([reqblock.responseData writeToFile:filepath atomically:YES])
             {
+                
                 DLog(@"success");
             }
         }

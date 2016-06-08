@@ -14,7 +14,9 @@
 #import "ASIFormDataRequest.h"
 #import <CommonCrypto/CommonDigest.h>
 #import "SPDeviceControl.h"
+#import "RMViewController.h"
 #import "Devicecell.h"
+#import "UIPackPageViewController.h"
 
 @interface DeviceTableViewController()<UITableViewDelegate,UITableViewDataSource,UIAlertViewDelegate>{
     dispatch_queue_t networkQueue;
@@ -41,7 +43,12 @@
 //获取局域网信息
 - (void)deviceProbe{
     dispatch_async(networkQueue, ^{
-        NSString *requestData = [api deviceProbe:nil];
+        NSDictionary *dic = @{
+                              @"scantime"      : @6000,
+                              @"scaninterval"  : @150
+                              };
+        NSData *descData = [NSJSONSerialization dataWithJSONObject:dic options:NSJSONWritingPrettyPrinted error:nil];
+        NSString *requestData = [api deviceProbe:[[NSString alloc] initWithData:descData encoding:NSUTF8StringEncoding]];
         NSData *responseData = [requestData dataUsingEncoding:NSUTF8StringEncoding];
         if ([[[responseData objectFromJSONData] objectForKey:@"status"] intValue] == 0) {
             NSArray *devicelist = [[responseData objectFromJSONData] objectForKey:@"list"];
@@ -162,6 +169,14 @@
             SPDeviceControl *devicecontrol = [[SPDeviceControl alloc]init];
             devicecontrol.BLDeviceinfo = info;
             [self.navigationController pushViewController:devicecontrol animated:YES];
+        }else if (info.type == 10026){
+            RMViewController *RMController = [[RMViewController alloc]init];
+            RMController.BLDeviceinfo = info;
+            [self.navigationController pushViewController:RMController animated:YES];
+        }else{
+            UIPackPageViewController *UIPackPageController = [[UIPackPageViewController alloc]init];
+            UIPackPageController.BLDeviceInfo = info;
+            [self.navigationController pushViewController:UIPackPageController animated:YES];
         }
     }
 
@@ -237,7 +252,9 @@
             DLog(@"filepath: %@", filepath);
             if ([reqblock.responseData writeToFile:filepath atomically:YES])
             {
+                DLog(@"%@",[reqblock.responseData objectFromJSONData]);
                 //获取设备的 profile 信息
+                info.downloadurl = downloadUrl;
                 [info.allkeys setObject:info.deviceid forKey:@"id"];
                 [info.allkeys setObject:info.devicekey forKey:@"key"];
                 [self deviceProfile:info.allkeys subdev:nil desc:@"{}"];

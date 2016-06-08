@@ -8,11 +8,30 @@
 
 /* Begin PBXBuildFile section */
 		021AFCB41CD375B400418071 /* BLDeviceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 021AFCB31CD375B400418071 /* BLDeviceInfo.m */; };
+		026502261D07C196009A81A0 /* UIPackPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 026502241D07C196009A81A0 /* UIPackPageViewController.m */; };
+		026502271D07C196009A81A0 /* UIPackPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 026502251D07C196009A81A0 /* UIPackPageViewController.xib */; };
+		0265024F1D07FC63009A81A0 /* aescrypt.c in Sources */ = {isa = PBXBuildFile; fileRef = 0265022D1D07FC63009A81A0 /* aescrypt.c */; };
+		026502501D07FC63009A81A0 /* aeskey.c in Sources */ = {isa = PBXBuildFile; fileRef = 0265022E1D07FC63009A81A0 /* aeskey.c */; };
+		026502511D07FC63009A81A0 /* aestab.c in Sources */ = {isa = PBXBuildFile; fileRef = 026502301D07FC63009A81A0 /* aestab.c */; };
+		026502521D07FC63009A81A0 /* entropy.c in Sources */ = {isa = PBXBuildFile; fileRef = 026502341D07FC63009A81A0 /* entropy.c */; };
+		026502531D07FC63009A81A0 /* fileenc.c in Sources */ = {isa = PBXBuildFile; fileRef = 026502361D07FC63009A81A0 /* fileenc.c */; };
+		026502541D07FC63009A81A0 /* hmac.c in Sources */ = {isa = PBXBuildFile; fileRef = 026502381D07FC63009A81A0 /* hmac.c */; };
+		026502551D07FC63009A81A0 /* prng.c in Sources */ = {isa = PBXBuildFile; fileRef = 0265023A1D07FC63009A81A0 /* prng.c */; };
+		026502561D07FC63009A81A0 /* pwd2key.c in Sources */ = {isa = PBXBuildFile; fileRef = 0265023C1D07FC63009A81A0 /* pwd2key.c */; };
+		026502571D07FC63009A81A0 /* sha1.c in Sources */ = {isa = PBXBuildFile; fileRef = 0265023E1D07FC63009A81A0 /* sha1.c */; };
+		026502581D07FC63009A81A0 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 026502411D07FC63009A81A0 /* Info.plist */; };
+		026502591D07FC63009A81A0 /* ioapi.c in Sources */ = {isa = PBXBuildFile; fileRef = 026502441D07FC63009A81A0 /* ioapi.c */; };
+		0265025A1D07FC63009A81A0 /* mztools.c in Sources */ = {isa = PBXBuildFile; fileRef = 026502461D07FC63009A81A0 /* mztools.c */; };
+		0265025B1D07FC63009A81A0 /* unzip.c in Sources */ = {isa = PBXBuildFile; fileRef = 026502481D07FC63009A81A0 /* unzip.c */; };
+		0265025C1D07FC63009A81A0 /* zip.c in Sources */ = {isa = PBXBuildFile; fileRef = 0265024A1D07FC63009A81A0 /* zip.c */; };
+		0265025D1D07FC63009A81A0 /* SSZipArchive.m in Sources */ = {isa = PBXBuildFile; fileRef = 0265024D1D07FC63009A81A0 /* SSZipArchive.m */; };
 		026B19951CD30B9C00E41998 /* DeviceTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 026B19941CD30B9C00E41998 /* DeviceTableViewController.m */; };
 		026B1C581CE18AB80002719D /* Devicecell.m in Sources */ = {isa = PBXBuildFile; fileRef = 026B1C571CE18AB80002719D /* Devicecell.m */; };
 		026B1C5A1CE190080002719D /* View.xib in Resources */ = {isa = PBXBuildFile; fileRef = 026B1C591CE190080002719D /* View.xib */; };
 		026B1C5D1CE1C00D0002719D /* UIImage+MJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 026B1C5C1CE1C00D0002719D /* UIImage+MJ.m */; };
 		027283FC1CDB1FEE00410F7E /* BLDeviceService.m in Sources */ = {isa = PBXBuildFile; fileRef = 027283FB1CDB1FEE00410F7E /* BLDeviceService.m */; };
+		027F3E0E1D06D0940099CC16 /* RMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 027F3E0C1D06D0940099CC16 /* RMViewController.m */; };
+		027F3E0F1D06D0940099CC16 /* RMViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 027F3E0D1D06D0940099CC16 /* RMViewController.xib */; };
 		0288E75D1CCF3C8C00DBED87 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 0288E75C1CCF3C8C00DBED87 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		0288E7611CCF416400DBED87 /* getCurrentWiFiSSID.m in Sources */ = {isa = PBXBuildFile; fileRef = 0288E7601CCF416400DBED87 /* getCurrentWiFiSSID.m */; };
 		0288E7691CCF547600DBED87 /* MBProgressHUD+MJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 0288E7651CCF547600DBED87 /* MBProgressHUD+MJ.m */; };
@@ -62,6 +81,44 @@
 /* Begin PBXFileReference section */
 		021AFCB21CD375B400418071 /* BLDeviceInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLDeviceInfo.h; sourceTree = "<group>"; };
 		021AFCB31CD375B400418071 /* BLDeviceInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLDeviceInfo.m; sourceTree = "<group>"; };
+		026502231D07C196009A81A0 /* UIPackPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIPackPageViewController.h; sourceTree = "<group>"; };
+		026502241D07C196009A81A0 /* UIPackPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIPackPageViewController.m; sourceTree = "<group>"; };
+		026502251D07C196009A81A0 /* UIPackPageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIPackPageViewController.xib; sourceTree = "<group>"; };
+		0265022B1D07FC63009A81A0 /* aes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aes.h; sourceTree = "<group>"; };
+		0265022C1D07FC63009A81A0 /* aes_via_ace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aes_via_ace.h; sourceTree = "<group>"; };
+		0265022D1D07FC63009A81A0 /* aescrypt.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = aescrypt.c; sourceTree = "<group>"; };
+		0265022E1D07FC63009A81A0 /* aeskey.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = aeskey.c; sourceTree = "<group>"; };
+		0265022F1D07FC63009A81A0 /* aesopt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aesopt.h; sourceTree = "<group>"; };
+		026502301D07FC63009A81A0 /* aestab.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = aestab.c; sourceTree = "<group>"; };
+		026502311D07FC63009A81A0 /* aestab.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aestab.h; sourceTree = "<group>"; };
+		026502321D07FC63009A81A0 /* brg_endian.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = brg_endian.h; sourceTree = "<group>"; };
+		026502331D07FC63009A81A0 /* brg_types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = brg_types.h; sourceTree = "<group>"; };
+		026502341D07FC63009A81A0 /* entropy.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = entropy.c; sourceTree = "<group>"; };
+		026502351D07FC63009A81A0 /* entropy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = entropy.h; sourceTree = "<group>"; };
+		026502361D07FC63009A81A0 /* fileenc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fileenc.c; sourceTree = "<group>"; };
+		026502371D07FC63009A81A0 /* fileenc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fileenc.h; sourceTree = "<group>"; };
+		026502381D07FC63009A81A0 /* hmac.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = hmac.c; sourceTree = "<group>"; };
+		026502391D07FC63009A81A0 /* hmac.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hmac.h; sourceTree = "<group>"; };
+		0265023A1D07FC63009A81A0 /* prng.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = prng.c; sourceTree = "<group>"; };
+		0265023B1D07FC63009A81A0 /* prng.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = prng.h; sourceTree = "<group>"; };
+		0265023C1D07FC63009A81A0 /* pwd2key.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = pwd2key.c; sourceTree = "<group>"; };
+		0265023D1D07FC63009A81A0 /* pwd2key.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pwd2key.h; sourceTree = "<group>"; };
+		0265023E1D07FC63009A81A0 /* sha1.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sha1.c; sourceTree = "<group>"; };
+		0265023F1D07FC63009A81A0 /* sha1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sha1.h; sourceTree = "<group>"; };
+		026502401D07FC63009A81A0 /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
+		026502411D07FC63009A81A0 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		026502431D07FC63009A81A0 /* crypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = crypt.h; sourceTree = "<group>"; };
+		026502441D07FC63009A81A0 /* ioapi.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ioapi.c; sourceTree = "<group>"; };
+		026502451D07FC63009A81A0 /* ioapi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ioapi.h; sourceTree = "<group>"; };
+		026502461D07FC63009A81A0 /* mztools.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mztools.c; sourceTree = "<group>"; };
+		026502471D07FC63009A81A0 /* mztools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mztools.h; sourceTree = "<group>"; };
+		026502481D07FC63009A81A0 /* unzip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = unzip.c; sourceTree = "<group>"; };
+		026502491D07FC63009A81A0 /* unzip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = unzip.h; sourceTree = "<group>"; };
+		0265024A1D07FC63009A81A0 /* zip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = zip.c; sourceTree = "<group>"; };
+		0265024B1D07FC63009A81A0 /* zip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zip.h; sourceTree = "<group>"; };
+		0265024C1D07FC63009A81A0 /* SSZipArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSZipArchive.h; sourceTree = "<group>"; };
+		0265024D1D07FC63009A81A0 /* SSZipArchive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSZipArchive.m; sourceTree = "<group>"; };
+		0265024E1D07FC63009A81A0 /* ZipArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZipArchive.h; sourceTree = "<group>"; };
 		026B19931CD30B9C00E41998 /* DeviceTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceTableViewController.h; sourceTree = "<group>"; };
 		026B19941CD30B9C00E41998 /* DeviceTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceTableViewController.m; sourceTree = "<group>"; };
 		026B1C561CE18AB80002719D /* Devicecell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Devicecell.h; sourceTree = "<group>"; };
@@ -71,6 +128,9 @@
 		026B1C5C1CE1C00D0002719D /* UIImage+MJ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+MJ.m"; path = "ASIHttpRequest/UIImage+MJ.m"; sourceTree = "<group>"; };
 		027283FA1CDB1FEE00410F7E /* BLDeviceService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLDeviceService.h; sourceTree = "<group>"; };
 		027283FB1CDB1FEE00410F7E /* BLDeviceService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLDeviceService.m; sourceTree = "<group>"; };
+		027F3E0B1D06D0940099CC16 /* RMViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMViewController.h; sourceTree = "<group>"; };
+		027F3E0C1D06D0940099CC16 /* RMViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMViewController.m; sourceTree = "<group>"; };
+		027F3E0D1D06D0940099CC16 /* RMViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RMViewController.xib; sourceTree = "<group>"; };
 		0288E75B1CCF3C8C00DBED87 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
 		0288E75C1CCF3C8C00DBED87 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
 		0288E75F1CCF416400DBED87 /* getCurrentWiFiSSID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = getCurrentWiFiSSID.h; sourceTree = "<group>"; };
@@ -175,6 +235,64 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		026502291D07FC63009A81A0 /* SSZipArchive */ = {
+			isa = PBXGroup;
+			children = (
+				0265022A1D07FC63009A81A0 /* aes */,
+				026502401D07FC63009A81A0 /* Common.h */,
+				026502411D07FC63009A81A0 /* Info.plist */,
+				026502421D07FC63009A81A0 /* minizip */,
+				0265024C1D07FC63009A81A0 /* SSZipArchive.h */,
+				0265024D1D07FC63009A81A0 /* SSZipArchive.m */,
+				0265024E1D07FC63009A81A0 /* ZipArchive.h */,
+			);
+			path = SSZipArchive;
+			sourceTree = "<group>";
+		};
+		0265022A1D07FC63009A81A0 /* aes */ = {
+			isa = PBXGroup;
+			children = (
+				0265022B1D07FC63009A81A0 /* aes.h */,
+				0265022C1D07FC63009A81A0 /* aes_via_ace.h */,
+				0265022D1D07FC63009A81A0 /* aescrypt.c */,
+				0265022E1D07FC63009A81A0 /* aeskey.c */,
+				0265022F1D07FC63009A81A0 /* aesopt.h */,
+				026502301D07FC63009A81A0 /* aestab.c */,
+				026502311D07FC63009A81A0 /* aestab.h */,
+				026502321D07FC63009A81A0 /* brg_endian.h */,
+				026502331D07FC63009A81A0 /* brg_types.h */,
+				026502341D07FC63009A81A0 /* entropy.c */,
+				026502351D07FC63009A81A0 /* entropy.h */,
+				026502361D07FC63009A81A0 /* fileenc.c */,
+				026502371D07FC63009A81A0 /* fileenc.h */,
+				026502381D07FC63009A81A0 /* hmac.c */,
+				026502391D07FC63009A81A0 /* hmac.h */,
+				0265023A1D07FC63009A81A0 /* prng.c */,
+				0265023B1D07FC63009A81A0 /* prng.h */,
+				0265023C1D07FC63009A81A0 /* pwd2key.c */,
+				0265023D1D07FC63009A81A0 /* pwd2key.h */,
+				0265023E1D07FC63009A81A0 /* sha1.c */,
+				0265023F1D07FC63009A81A0 /* sha1.h */,
+			);
+			path = aes;
+			sourceTree = "<group>";
+		};
+		026502421D07FC63009A81A0 /* minizip */ = {
+			isa = PBXGroup;
+			children = (
+				026502431D07FC63009A81A0 /* crypt.h */,
+				026502441D07FC63009A81A0 /* ioapi.c */,
+				026502451D07FC63009A81A0 /* ioapi.h */,
+				026502461D07FC63009A81A0 /* mztools.c */,
+				026502471D07FC63009A81A0 /* mztools.h */,
+				026502481D07FC63009A81A0 /* unzip.c */,
+				026502491D07FC63009A81A0 /* unzip.h */,
+				0265024A1D07FC63009A81A0 /* zip.c */,
+				0265024B1D07FC63009A81A0 /* zip.h */,
+			);
+			path = minizip;
+			sourceTree = "<group>";
+		};
 		026B198B1CD3056500E41998 /* Interface */ = {
 			isa = PBXGroup;
 			children = (
@@ -201,6 +319,12 @@
 				026B19941CD30B9C00E41998 /* DeviceTableViewController.m */,
 				02D0200E1CD993D50032F8FE /* SPDeviceControl.h */,
 				02D0200F1CD993D50032F8FE /* SPDeviceControl.m */,
+				027F3E0B1D06D0940099CC16 /* RMViewController.h */,
+				027F3E0C1D06D0940099CC16 /* RMViewController.m */,
+				027F3E0D1D06D0940099CC16 /* RMViewController.xib */,
+				026502231D07C196009A81A0 /* UIPackPageViewController.h */,
+				026502241D07C196009A81A0 /* UIPackPageViewController.m */,
+				026502251D07C196009A81A0 /* UIPackPageViewController.xib */,
 			);
 			name = controller;
 			sourceTree = "<group>";
@@ -275,6 +399,7 @@
 				0288E75E1CCF3C9300DBED87 /* JSONKit */,
 				1F5572591BD0EB780088B3FC /* ASIHttpRequest */,
 				026B1C5E1CE1C01F0002719D /* UIImage */,
+				026502291D07FC63009A81A0 /* SSZipArchive */,
 				0288E7701CCF640000DBED87 /* bhkcommon.h */,
 			);
 			path = 3rd;
@@ -503,9 +628,12 @@
 			files = (
 				1FE95D311BD092E4001CA311 /* LaunchScreen.storyboard in Resources */,
 				1FE95D2E1BD092E4001CA311 /* Assets.xcassets in Resources */,
+				026502581D07FC63009A81A0 /* Info.plist in Resources */,
 				0288E76A1CCF547600DBED87 /* MBProgressHUD.bundle in Resources */,
 				1FE95D2C1BD092E4001CA311 /* Main.storyboard in Resources */,
 				026B1C5A1CE190080002719D /* View.xib in Resources */,
+				027F3E0F1D06D0940099CC16 /* RMViewController.xib in Resources */,
+				026502271D07C196009A81A0 /* UIPackPageViewController.xib in Resources */,
 				1F5572D81BD0EB780088B3FC /* README-GHUnit in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -517,9 +645,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				026502551D07FC63009A81A0 /* prng.c in Sources */,
 				0288E7691CCF547600DBED87 /* MBProgressHUD+MJ.m in Sources */,
+				026502511D07FC63009A81A0 /* aestab.c in Sources */,
 				1F5572B41BD0EB780088B3FC /* ASIDataCompressor.m in Sources */,
 				1FE95D291BD092E4001CA311 /* ViewController.m in Sources */,
+				026502531D07FC63009A81A0 /* fileenc.c in Sources */,
+				0265025C1D07FC63009A81A0 /* zip.c in Sources */,
 				1F5572C81BD0EB780088B3FC /* ASIS3ServiceRequest.m in Sources */,
 				1F5572B81BD0EB780088B3FC /* ASIHTTPRequest.m in Sources */,
 				1F5572C61BD0EB780088B3FC /* ASIS3ObjectRequest.m in Sources */,
@@ -527,32 +659,44 @@
 				0288E76B1CCF547600DBED87 /* MBProgressHUD.m in Sources */,
 				1F5572C71BD0EB780088B3FC /* ASIS3Request.m in Sources */,
 				1F5572BC1BD0EB780088B3FC /* ASICloudFilesCDNRequest.m in Sources */,
+				026502261D07C196009A81A0 /* UIPackPageViewController.m in Sources */,
 				1F5572B71BD0EB780088B3FC /* ASIFormDataRequest.m in Sources */,
 				026B19951CD30B9C00E41998 /* DeviceTableViewController.m in Sources */,
+				0265025B1D07FC63009A81A0 /* unzip.c in Sources */,
 				1FE95D261BD092E4001CA311 /* AppDelegate.m in Sources */,
+				026502541D07FC63009A81A0 /* hmac.c in Sources */,
 				1F5572C51BD0EB780088B3FC /* ASIS3BucketRequest.m in Sources */,
 				02D020101CD993D50032F8FE /* SPDeviceControl.m in Sources */,
+				026502571D07FC63009A81A0 /* sha1.c in Sources */,
 				1F5572BF1BD0EB780088B3FC /* ASICloudFilesContainerXMLParserDelegate.m in Sources */,
 				1F5572BE1BD0EB780088B3FC /* ASICloudFilesContainerRequest.m in Sources */,
 				027283FC1CDB1FEE00410F7E /* BLDeviceService.m in Sources */,
+				026502501D07FC63009A81A0 /* aeskey.c in Sources */,
 				1F5572B91BD0EB780088B3FC /* ASIInputStream.m in Sources */,
+				0265025D1D07FC63009A81A0 /* SSZipArchive.m in Sources */,
 				1F5572C21BD0EB780088B3FC /* ASICloudFilesRequest.m in Sources */,
+				026502561D07FC63009A81A0 /* pwd2key.c in Sources */,
 				1F5572BB1BD0EB780088B3FC /* ASIWebPageRequest.m in Sources */,
 				021AFCB41CD375B400418071 /* BLDeviceInfo.m in Sources */,
 				026B1C5D1CE1C00D0002719D /* UIImage+MJ.m in Sources */,
 				1F5572BD1BD0EB780088B3FC /* ASICloudFilesContainer.m in Sources */,
+				0265025A1D07FC63009A81A0 /* mztools.c in Sources */,
 				1F5572C11BD0EB780088B3FC /* ASICloudFilesObjectRequest.m in Sources */,
 				1FE95D231BD092E4001CA311 /* main.m in Sources */,
 				1F5572BA1BD0EB780088B3FC /* ASINetworkQueue.m in Sources */,
+				0265024F1D07FC63009A81A0 /* aescrypt.c in Sources */,
 				0288E75D1CCF3C8C00DBED87 /* JSONKit.m in Sources */,
 				1F5572C41BD0EB780088B3FC /* ASIS3BucketObject.m in Sources */,
 				1F5572B51BD0EB780088B3FC /* ASIDataDecompressor.m in Sources */,
 				1F5572C31BD0EB780088B3FC /* ASIS3Bucket.m in Sources */,
 				0288E7611CCF416400DBED87 /* getCurrentWiFiSSID.m in Sources */,
 				1F5572C01BD0EB780088B3FC /* ASICloudFilesObject.m in Sources */,
+				026502591D07FC63009A81A0 /* ioapi.c in Sources */,
 				1F5572B61BD0EB780088B3FC /* ASIDownloadCache.m in Sources */,
+				027F3E0E1D06D0940099CC16 /* RMViewController.m in Sources */,
 				1F5572D91BD0EB780088B3FC /* Reachability.m in Sources */,
 				026B1C581CE18AB80002719D /* Devicecell.m in Sources */,
+				026502521D07FC63009A81A0 /* entropy.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -662,7 +806,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Broadlink Co.,Ltd";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				HEADER_SEARCH_PATHS = "${SDK_DIR}/usr/include/libxml2";
 				INFOPLIST_FILE = SDKDemo/Info.plist;
@@ -681,7 +825,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Broadlink Co.,Ltd";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				HEADER_SEARCH_PATHS = "${SDK_DIR}/usr/include/libxml2";
 				INFOPLIST_FILE = SDKDemo/Info.plist;
