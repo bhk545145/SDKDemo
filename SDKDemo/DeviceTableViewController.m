@@ -44,7 +44,7 @@
 - (void)deviceProbe{
     dispatch_async(networkQueue, ^{
         NSDictionary *dic = @{
-                              @"scantime"      : @6000,
+                              @"scantime"      : @3000,
                               @"scaninterval"  : @150
                               };
         NSData *descData = [NSJSONSerialization dataWithJSONObject:dic options:NSJSONWritingPrettyPrinted error:nil];
@@ -128,7 +128,6 @@
     NSData *devData = [NSJSONSerialization dataWithJSONObject:info.allkeys options:NSJSONWritingPrettyPrinted error:nil];
     //设备配对
     [self devicePair:[[NSString alloc] initWithData:devData encoding:NSUTF8StringEncoding] desc:@"{}" info:info];
-    alert = [[UIAlertView alloc]init];
     alert.tag = indexPath.row;
 }
 //刷新
@@ -138,6 +137,7 @@
 }
 //设备配对
 - (void)devicePair:(NSString *)devInfo desc: (NSString *)descStr info:(BLDeviceInfo *)info{
+    alert = [[UIAlertView alloc]init];
     dispatch_async(networkQueue, ^{
         NSString *requestData = [api devicePair:devInfo desc:descStr];
         NSData *responseData = [requestData dataUsingEncoding:NSUTF8StringEncoding];
@@ -156,6 +156,10 @@
             [self deviceGetResourceToken:ACCOUNT_ID accountsession:ACCOUNT_SESSION productpid:info.pid resourcestype:@1 data:[NSDictionary dictionary] info:info];
         }else{
             DLog(@"%@",requestData);
+            dispatch_async(dispatch_get_main_queue(), ^{
+                alert = [alert initWithTitle:@"Error" message:@"配对超时" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+                [alert show];
+            });
             
         }
     });

@@ -13,7 +13,7 @@
 
 //#define WIFI_SSID           @"WCWCWC"
 //#define WIFI_PWD            @""
-#define WIFI_GATEWAY        @"192.168.0.1"
+#define WIFI_GATEWAY        @"192.168.9.1"
 
 #define USER_NAME           @"yzm157"
 #define USER_PHONE          @"18011112222"

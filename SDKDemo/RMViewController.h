@@ -11,5 +11,7 @@
 @interface RMViewController : UIViewController
 @property (strong,nonatomic) BLDeviceInfo *BLDeviceinfo;
 - (IBAction)RMbtn:(id)sender;
+- (IBAction)RMsend:(id)sender;
+@property (weak, nonatomic) IBOutlet UITextView *Irdatxt;
 
 @end

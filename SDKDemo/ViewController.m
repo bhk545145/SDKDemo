@@ -337,7 +337,7 @@
 //        NSString *ctrlStr = [[NSString alloc] initWithData:ctrlData encoding:NSUTF8StringEncoding];
 //        NSLog(@"ctrlStr: %@", ctrlStr);
 //        NSString *dnaControlResult = [api dnaControl:[[NSString alloc] initWithData:devData encoding:NSUTF8StringEncoding] subdev:nil data:ctrlStr desc:[NSString stringWithFormat:@"{\"command\":\"dev_ctrl\", \"cookie\":\"\", \"netmode\":1, \"account_id\":\"%@\"}", ACCOUNT_ID]];
-        NSString *dnaControlResult = [api dnaControl:[[NSString alloc] initWithData:devData encoding:NSUTF8StringEncoding] subdev:nil data:@"{\"data\":\"YWFhYWJiYmJi\"}" desc:[NSString stringWithFormat:@"{\"command\":\"dev_passthrough\", \"cookie\":\"\", \"netmode\":1, \"account_id\":\"%@\"}", self.accountid.text]];
+        NSString *dnaControlResult = [api dnaControl:[[NSString alloc] initWithData:devData encoding:NSUTF8StringEncoding] subdev:nil data:@"{\"data\":\"BgAAAA==\"}" desc:[NSString stringWithFormat:@"{\"command\":\"dev_passthrough\", \"cookie\":\"\", \"netmode\":1, \"account_id\":\"%@\"}", self.accountid.text]];
         DLog(@"dnaControlResult: %@", dnaControlResult);
         [self NSlogNSString:dnaControlResult];
     });

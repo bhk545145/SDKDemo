@@ -42,6 +42,30 @@
  */
 - (void)dev_ctrlget:(BLDeviceInfo *)BLDeviceInfo params:(NSString *)params andBlock:(void(^)(BOOL ret, NSDictionary *dic))block;
 
-
+/**
+ *  RM进入学习模式
+ *
+ *  @param BLDeviceInfo 设备模型
+ *  @param params       params参数
+ *  @param block        返回结果
+ */
 - (void)RMdev_ctrl:(BLDeviceInfo *)BLDeviceInfo params:(NSString *)params andBlock:(void(^)(BOOL ret, NSDictionary *dic))block;
+
+/**
+ *  RM查询学习到的码
+ *
+ *  @param BLDeviceInfo 设备模型
+ *  @param params       params参数
+ *  @param block        返回结果
+ */
+- (void)RMdev_ctrlIrdaGet:(BLDeviceInfo *)BLDeviceInfo params:(NSString *)params andBlock:(void(^)(BOOL ret, NSDictionary *dic))block;
+/**
+ *  RM发射学习到的码
+ *
+ *  @param BLDeviceInfo 设备模型
+ *  @param params       params参数
+ *  @param status       学习到的码
+ *  @param block        返回结果
+ */
+- (void)RMdev_ctrlIrdaSet:(BLDeviceInfo *)BLDeviceInfo params:(NSString *)params status:(NSString *)status andBlock:(void(^)(BOOL ret, NSDictionary *dic))block;
 @end

@@ -12,7 +12,12 @@
 #import "bhkcommon.h"
 #import "BLDeviceService.h"
 
-@interface RMViewController ()
+@interface RMViewController (){
+    dispatch_queue_t queue;
+    dispatch_queue_t networkQueue;
+    NetworkAPI *api;
+    BLDeviceService *deviceservice;
+}
 
 @end
 
@@ -20,7 +25,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    api = [[NetworkAPI alloc]init];
+    queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    networkQueue = dispatch_queue_create("BroadLinkNetworkQueue", DISPATCH_QUEUE_CONCURRENT);
+    deviceservice = [[BLDeviceService alloc]init];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -34,6 +42,34 @@
 
 
 - (IBAction)RMbtn:(id)sender {
-    
+    dispatch_async(networkQueue, ^{
+        [deviceservice RMdev_ctrl:_BLDeviceinfo params:@"irdastudy" andBlock:^(BOOL ret, NSDictionary *dic) {
+            [deviceservice RMdev_ctrlIrdaGet:_BLDeviceinfo params:@"irda" andBlock:^(BOOL ret, NSDictionary *dic) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    if (ret) {
+                        NSArray *paramsvals = [dic valueForKeyPath:@"data.vals"];
+                        if([paramsvals count] != 0){
+                            if([[paramsvals objectAtIndex:0] count] != 0){
+                                NSString *paramsval = [[[paramsvals objectAtIndex:0] objectAtIndex:0] valueForKey:@"val"];
+                                self.Irdatxt.text = [NSString stringWithFormat:@"%@",paramsval];
+                            }else{
+                                self.Irdatxt.text = @"空";
+                            }
+                        }else{
+                            self.Irdatxt.text = @"空";
+                        }
+                    }
+                });
+            }];
+        }];
+    });
+}
+
+- (IBAction)RMsend:(id)sender {
+    dispatch_async(networkQueue, ^{
+        [deviceservice RMdev_ctrlIrdaSet:_BLDeviceinfo params:@"irda" status:self.Irdatxt.text andBlock:^(BOOL ret, NSDictionary *dic) {
+            DLog(@"%@",dic);
+        }];
+    });
 }
 @end

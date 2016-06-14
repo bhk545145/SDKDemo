@@ -102,8 +102,26 @@
     }
 }
 
-//RM控制
+//RM进入学习模式
 - (void)RMdev_ctrl:(BLDeviceInfo *)BLDeviceInfo params:(NSString *)params andBlock:(void(^)(BOOL ret, NSDictionary *dic))block{
+    //1
+    NSData *devData = [NSJSONSerialization dataWithJSONObject:BLDeviceInfo.allkeys options:NSJSONWritingPrettyPrinted error:nil];
+    NSString *devDataJsonString = [[NSString alloc] initWithData:devData encoding:NSUTF8StringEncoding];
+    //2
+    NSString *dataJsonString = [NSString stringWithFormat:@"{\"act\":\"set\", \"params\":[\"%@\"], \"vals\":[]}",params];
+    //3
+    NSString *descJsonString = [NSString stringWithFormat:@"{\"command\":\"dev_ctrl\", \"cookie\":\"\", \"netmode\":0, \"account_id\":\"%@\"}", ACCOUNT_ID];
+    //4
+    NSDictionary *dic = [self dnaControl:devDataJsonString subdev:nil data:dataJsonString desc:descJsonString];
+    if ([dic[@"status"]intValue] == 0) {
+        block(YES,dic);
+    }else{
+        block(NO,dic);
+    }
+}
+
+//RM查询学习到的码
+- (void)RMdev_ctrlIrdaGet:(BLDeviceInfo *)BLDeviceInfo params:(NSString *)params andBlock:(void(^)(BOOL ret, NSDictionary *dic))block{
     //1
     NSData *devData = [NSJSONSerialization dataWithJSONObject:BLDeviceInfo.allkeys options:NSJSONWritingPrettyPrinted error:nil];
     NSString *devDataJsonString = [[NSString alloc] initWithData:devData encoding:NSUTF8StringEncoding];
@@ -116,7 +134,27 @@
     if ([dic[@"status"]intValue] == 0) {
         block(YES,dic);
     }else{
-        block(NO,dic);
+        [self RMdev_ctrlIrdaGet:BLDeviceInfo params:params andBlock:^(BOOL ret, NSDictionary *dic) {
+            block(YES,dic);
+        }];
+    }
+}
+
+//RM发射学习到的码
+- (void)RMdev_ctrlIrdaSet:(BLDeviceInfo *)BLDeviceInfo params:(NSString *)params status:(NSString *)status andBlock:(void(^)(BOOL ret, NSDictionary *dic))block{
+    //1
+    NSData *devData = [NSJSONSerialization dataWithJSONObject:BLDeviceInfo.allkeys options:NSJSONWritingPrettyPrinted error:nil];
+    NSString *devDataJsonString = [[NSString alloc] initWithData:devData encoding:NSUTF8StringEncoding];
+    //2
+    NSString *dataJsonString = [NSString stringWithFormat:@"{\"act\":\"set\", \"params\":[\"%@\"], \"vals\":[[{\"val\":\"%@\", \"idx\":1}]]}",params,status];
+    //3
+    NSString *descJsonString = [NSString stringWithFormat:@"{\"command\":\"dev_ctrl\", \"cookie\":\"\", \"netmode\":0, \"account_id\":\"%@\"}", ACCOUNT_ID];
+    //4
+    NSDictionary *dic = [self dnaControl:devDataJsonString subdev:nil data:dataJsonString desc:descJsonString];
+    if ([dic[@"status"]intValue] == 0) {
+        block(YES,dic);
+    }else{
+        block(YES,dic);
     }
 }
 
