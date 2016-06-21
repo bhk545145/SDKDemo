@@ -15,6 +15,7 @@
 #import "getCurrentWiFiSSID.h"
 #import "MBProgressHUD+MJ.h"
 #import "bhkcommon.h"
+#import "BLDeviceService.h"
 
 @interface ViewController () <UIAlertViewDelegate,UITextFieldDelegate>
 {
@@ -327,18 +328,11 @@
         return;
     }
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        NSArray *vals = [[NSArray alloc] init];
         NSData *devData = [NSJSONSerialization dataWithJSONObject:selectDev options:NSJSONWritingPrettyPrinted error:nil];
-//        NSDictionary *intfs = selectDevProfile[@"suids"][0][@"intfs"];
-//        NSLog(@"intfs: %@", intfs);
-//        NSLog(@"allkeys: %@", [intfs allKeys]);
-//        NSDictionary *ctrlDic = [NSDictionary dictionaryWithObjectsAndKeys:@"get", @"act", selectDevProfile[@"srvs"], @"srv", [intfs allKeys], @"params", vals, @"vals", nil];
-//        NSData *ctrlData = [NSJSONSerialization dataWithJSONObject:ctrlDic options:NSJSONWritingPrettyPrinted error:nil];
-//        NSString *ctrlStr = [[NSString alloc] initWithData:ctrlData encoding:NSUTF8StringEncoding];
-//        NSLog(@"ctrlStr: %@", ctrlStr);
-//        NSString *dnaControlResult = [api dnaControl:[[NSString alloc] initWithData:devData encoding:NSUTF8StringEncoding] subdev:nil data:ctrlStr desc:[NSString stringWithFormat:@"{\"command\":\"dev_ctrl\", \"cookie\":\"\", \"netmode\":1, \"account_id\":\"%@\"}", ACCOUNT_ID]];
         NSString *dnaControlResult = [api dnaControl:[[NSString alloc] initWithData:devData encoding:NSUTF8StringEncoding] subdev:nil data:@"{\"data\":\"BgAAAA==\"}" desc:[NSString stringWithFormat:@"{\"command\":\"dev_passthrough\", \"cookie\":\"\", \"netmode\":1, \"account_id\":\"%@\"}", self.accountid.text]];
+        NSString *dnadev_ctrlResult = [api dnaControl:[[NSString alloc] initWithData:devData encoding:NSUTF8StringEncoding] subdev:nil data:@"{\"act\":\"set\", \"params\":[\"pwr\"], \"vals\":[[{\"val\":1, \"idx\":1}]]}" desc:[NSString stringWithFormat:@"{\"command\":\"dev_ctrl\", \"cookie\":\"\", \"netmode\":1, \"account_id\":\"%@\"}", self.accountid.text]];
         DLog(@"dnaControlResult: %@", dnaControlResult);
+        DLog(@"dnadev_ctrlResult: %@", dnadev_ctrlResult);
         [self NSlogNSString:dnaControlResult];
     });
     

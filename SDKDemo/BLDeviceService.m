@@ -74,7 +74,48 @@
     //2
     NSString *dataJsonString = [NSString stringWithFormat:@"{\"act\":\"set\", \"params\":[\"pwr\"], \"vals\":[[{\"val\":%d, \"idx\":1}]]}",status];
     //3
-    NSString *descJsonString = [NSString stringWithFormat:@"{\"command\":\"dev_ctrl\", \"cookie\":\"\", \"netmode\":0, \"account_id\":\"%@\"}", ACCOUNT_ID];
+    NSString *descJsonString = [NSString stringWithFormat:@"{\"command\":\"dev_ctrl\", \"cookie\":\"\", \"netmode\":1, \"account_id\":\"%@\",\"ltimeout\": 1500,\"rtimeout\": 12000}", ACCOUNT_ID];
+    //4
+    NSDictionary *dic = [self dnaControl:devDataJsonString subdev:nil data:dataJsonString desc:descJsonString];
+    if ([dic[@"status"]intValue] == 0) {
+        block(YES,dic);
+    }else{
+        block(NO,dic);
+    }
+}
+
+//插座定时get
+- (void)dev_ctrltsk:(BLDeviceInfo *)BLDeviceInfo andBlock:(void(^)(BOOL ret, NSDictionary *dic))block{
+    //1
+    NSData *devData = [NSJSONSerialization dataWithJSONObject:BLDeviceInfo.allkeys options:NSJSONWritingPrettyPrinted error:nil];
+    NSString *devDataJsonString = [[NSString alloc] initWithData:devData encoding:NSUTF8StringEncoding];
+    //2
+    NSString *dataJsonString = [NSString stringWithFormat:@"{\"act\":\"get\", \"params\":[\"pertsk\"], \"vals\":[]}"];
+    //3
+    NSString *descJsonString = [NSString stringWithFormat:@"{\"command\":\"dev_ctrl\", \"cookie\":\"\", \"netmode\":1, \"account_id\":\"%@\"}", ACCOUNT_ID];
+    //4
+    NSDictionary *dic = [self dnaControl:devDataJsonString subdev:nil data:dataJsonString desc:descJsonString];
+    if ([dic[@"status"]intValue] == 0) {
+        block(YES,dic);
+    }else{
+        block(NO,dic);
+    }
+}
+
+//插座设置定时
+- (void)dev_ctrlsetpertsk:(BLDeviceInfo *)BLDeviceInfo andBlock:(void(^)(BOOL ret, NSDictionary *dic))block{
+    __block NSString *cookie;
+    [self dev_ctrltsk:BLDeviceInfo andBlock:^(BOOL ret, NSDictionary *dic) {
+       cookie = dic[@"cookie"];
+    }];
+    //1
+    NSData *devData = [NSJSONSerialization dataWithJSONObject:BLDeviceInfo.allkeys options:NSJSONWritingPrettyPrinted error:nil];
+    NSString *devDataJsonString = [[NSString alloc] initWithData:devData encoding:NSUTF8StringEncoding];
+    //2
+    NSString *val  =@"1|+0800-164530@165031|null|0|0";
+    NSString *dataJsonString = [NSString stringWithFormat:@"{\"act\":\"set\", \"params\":[\"pertsk\"], \"vals\":[[{\"val\":\"%@\",\"idx\":1}]]}",val];
+    //3
+    NSString *descJsonString = [NSString stringWithFormat:@"{\"command\":\"dev_ctrl\", \"cookie\":\"%@\", \"netmode\":1, \"account_id\":\"%@\"}", cookie,ACCOUNT_ID];
     //4
     NSDictionary *dic = [self dnaControl:devDataJsonString subdev:nil data:dataJsonString desc:descJsonString];
     if ([dic[@"status"]intValue] == 0) {
@@ -92,7 +133,7 @@
     //2
     NSString *dataJsonString = [NSString stringWithFormat:@"{\"act\":\"get\", \"params\":[\"%@\"], \"vals\":[]}",params];
     //3
-    NSString *descJsonString = [NSString stringWithFormat:@"{\"command\":\"dev_ctrl\", \"cookie\":\"\", \"netmode\":0, \"account_id\":\"%@\"}", ACCOUNT_ID];
+    NSString *descJsonString = [NSString stringWithFormat:@"{\"command\":\"dev_ctrl\", \"cookie\":\"\", \"netmode\":1, \"account_id\":\"%@\"}", ACCOUNT_ID];
     //4
     NSDictionary *dic = [self dnaControl:devDataJsonString subdev:nil data:dataJsonString desc:descJsonString];
     if ([dic[@"status"]intValue] == 0) {
@@ -110,7 +151,7 @@
     //2
     NSString *dataJsonString = [NSString stringWithFormat:@"{\"act\":\"set\", \"params\":[\"%@\"], \"vals\":[]}",params];
     //3
-    NSString *descJsonString = [NSString stringWithFormat:@"{\"command\":\"dev_ctrl\", \"cookie\":\"\", \"netmode\":0, \"account_id\":\"%@\"}", ACCOUNT_ID];
+    NSString *descJsonString = [NSString stringWithFormat:@"{\"command\":\"dev_ctrl\", \"cookie\":\"\", \"netmode\":1, \"account_id\":\"%@\"}", ACCOUNT_ID];
     //4
     NSDictionary *dic = [self dnaControl:devDataJsonString subdev:nil data:dataJsonString desc:descJsonString];
     if ([dic[@"status"]intValue] == 0) {
@@ -128,7 +169,7 @@
     //2
     NSString *dataJsonString = [NSString stringWithFormat:@"{\"act\":\"get\", \"params\":[\"%@\"], \"vals\":[]}",params];
     //3
-    NSString *descJsonString = [NSString stringWithFormat:@"{\"command\":\"dev_ctrl\", \"cookie\":\"\", \"netmode\":0, \"account_id\":\"%@\"}", ACCOUNT_ID];
+    NSString *descJsonString = [NSString stringWithFormat:@"{\"command\":\"dev_ctrl\", \"cookie\":\"\", \"netmode\":1, \"account_id\":\"%@\"}", ACCOUNT_ID];
     //4
     NSDictionary *dic = [self dnaControl:devDataJsonString subdev:nil data:dataJsonString desc:descJsonString];
     if ([dic[@"status"]intValue] == 0) {
@@ -148,7 +189,7 @@
     //2
     NSString *dataJsonString = [NSString stringWithFormat:@"{\"act\":\"set\", \"params\":[\"%@\"], \"vals\":[[{\"val\":\"%@\", \"idx\":1}]]}",params,status];
     //3
-    NSString *descJsonString = [NSString stringWithFormat:@"{\"command\":\"dev_ctrl\", \"cookie\":\"\", \"netmode\":0, \"account_id\":\"%@\"}", ACCOUNT_ID];
+    NSString *descJsonString = [NSString stringWithFormat:@"{\"command\":\"dev_ctrl\", \"cookie\":\"\", \"netmode\":1, \"account_id\":\"%@\"}", ACCOUNT_ID];
     //4
     NSDictionary *dic = [self dnaControl:devDataJsonString subdev:nil data:dataJsonString desc:descJsonString];
     if ([dic[@"status"]intValue] == 0) {

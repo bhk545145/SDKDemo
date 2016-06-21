@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Item 2-->
@@ -53,107 +52,107 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iiX-w5-f6N">
-                                <rect key="frame" x="20" y="20" width="201" height="30"/>
+                                <rect key="frame" x="16" y="20" width="201" height="30"/>
                                 <state key="normal" title="SDKInit"/>
                                 <connections>
                                     <action selector="SDKInit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eWj-LX-jrD"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fwZ-cz-SoC">
-                                <rect key="frame" x="20" y="78" width="201" height="30"/>
+                                <rect key="frame" x="16" y="78" width="201" height="30"/>
                                 <state key="normal" title="SDKAuth"/>
                                 <connections>
                                     <action selector="SDKAuth:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GXf-CC-1Xt"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ewu-4f-5C7">
-                                <rect key="frame" x="20" y="142" width="201" height="30"/>
+                                <rect key="frame" x="16" y="142" width="201" height="30"/>
                                 <state key="normal" title="deviceEasyConfig"/>
                                 <connections>
                                     <action selector="deviceEasyConfig:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Fmx-57-2Ed"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Qr-th-Kso">
-                                <rect key="frame" x="20" y="180" width="201" height="30"/>
+                                <rect key="frame" x="16" y="180" width="201" height="30"/>
                                 <state key="normal" title="deviceEasyConfigCancel"/>
                                 <connections>
                                     <action selector="deviceEasyConfigCancel:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fnl-h4-yGZ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hOb-pf-lTi">
-                                <rect key="frame" x="20" y="218" width="201" height="30"/>
+                                <rect key="frame" x="16" y="218" width="201" height="30"/>
                                 <state key="normal" title="deviceProbe"/>
                                 <connections>
                                     <action selector="deviceProbe:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Rc2-X2-PH3"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iun-g6-Qhe">
-                                <rect key="frame" x="20" y="256" width="201" height="30"/>
+                                <rect key="frame" x="16" y="256" width="201" height="30"/>
                                 <state key="normal" title="devicePair"/>
                                 <connections>
                                     <action selector="devicePair:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WWh-hk-Zsc"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="csM-HD-G6v">
-                                <rect key="frame" x="20" y="294" width="201" height="30"/>
+                                <rect key="frame" x="16" y="294" width="201" height="30"/>
                                 <state key="normal" title="deviceBindWithServer"/>
                                 <connections>
                                     <action selector="deviceBindWithServer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9fb-0F-hRj"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Ca-Aa-uxS">
-                                <rect key="frame" x="20" y="332" width="201" height="30"/>
+                                <rect key="frame" x="16" y="332" width="201" height="30"/>
                                 <state key="normal" title="deviceGetResourceToken"/>
                                 <connections>
                                     <action selector="deviceGetResourceToken:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yJM-ic-bK8"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U1E-YB-xzN">
-                                <rect key="frame" x="20" y="370" width="201" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U1E-YB-xzN">
+                                <rect key="frame" x="16" y="370" width="201" height="30"/>
                                 <state key="normal" title="deviceProfile"/>
                                 <connections>
                                     <action selector="deviceProfile:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ICH-R1-T5f"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2TW-QY-VxZ">
-                                <rect key="frame" x="20" y="408" width="201" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2TW-QY-VxZ">
+                                <rect key="frame" x="16" y="405" width="201" height="30"/>
                                 <state key="normal" title="dnaControl"/>
                                 <connections>
                                     <action selector="dnaControl:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qSL-LE-n8q"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bhf-oW-DR5">
-                                <rect key="frame" x="20" y="110" width="97" height="30"/>
+                                <rect key="frame" x="16" y="110" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cpE-lq-0Gb">
-                                <rect key="frame" x="124" y="110" width="97" height="30"/>
+                                <rect key="frame" x="121" y="110" width="91" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="yzm157" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Kb-hM-bxC">
-                                <rect key="frame" x="20" y="52" width="97" height="30"/>
+                                <rect key="frame" x="16" y="52" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="yzm157.broadlink.com.cn" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xf9-zJ-IeH">
-                                <rect key="frame" x="124" y="52" width="97" height="30"/>
+                                <rect key="frame" x="120" y="52" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZfB-4X-WUe">
-                                <rect key="frame" x="0.0" y="435" width="600" height="113"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZfB-4X-WUe">
+                                <rect key="frame" x="16" y="505" width="343" height="105"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2yg-jJ-Rsr">
-                                <rect key="frame" x="534" y="408" width="46" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2yg-jJ-Rsr">
+                                <rect key="frame" x="331" y="470" width="36" height="30"/>
                                 <state key="normal" title="Clear"/>
                                 <connections>
                                     <action selector="Clear:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EXO-EY-a72"/>
@@ -161,19 +160,11 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="2yg-jJ-Rsr" secondAttribute="bottom" constant="118" id="95a-T4-MIV"/>
-                            <constraint firstItem="ZfB-4X-WUe" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="QPG-R8-eh9"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ZfB-4X-WUe" secondAttribute="bottom" constant="8" id="Rmo-el-V9e"/>
-                            <constraint firstItem="ZfB-4X-WUe" firstAttribute="top" secondItem="2TW-QY-VxZ" secondAttribute="bottom" id="fuf-8T-3QV"/>
-                            <constraint firstItem="2yg-jJ-Rsr" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" constant="8" id="jNW-RN-17D"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="ZfB-4X-WUe" secondAttribute="trailing" id="mWd-ui-hm6"/>
-                            <constraint firstItem="ZfB-4X-WUe" firstAttribute="top" secondItem="U1E-YB-xzN" secondAttribute="bottom" constant="35" id="wJR-O7-uz5"/>
-                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="接口测试" id="fef-YH-NlB"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="accountid" destination="1Kb-hM-bxC" id="imc-Hc-mpZ"/>
                         <outlet property="accountsession" destination="Xf9-zJ-IeH" id="3MP-25-Z4R"/>
@@ -184,7 +175,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="305" y="418"/>
+            <point key="canvasLocation" x="304.5" y="417.5"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="ymN-uY-XUY">

@@ -69,6 +69,12 @@
     [devctrlbtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [devctrlbtn addTarget:self action:@selector(devctrlbtnClick:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:devctrlbtn];
+    UIButton *devtskbtn = [[UIButton alloc]initWithFrame:CGRectMake(100, 360, 150, 50)];
+    [devtskbtn setTitle:@"定时" forState:UIControlStateNormal];
+    [devtskbtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [devtskbtn addTarget:self action:@selector(devtskbtnClick:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:devtskbtn];
+
     namefield = [[UITextField alloc]initWithFrame:CGRectMake(10, 80, 100, 50)];
     namefield.font = [UIFont fontWithName:@"Arial" size:14.0f];
     namefield.borderStyle = UITextBorderStyleRoundedRect;
@@ -82,7 +88,7 @@
     paramsfield.borderStyle = UITextBorderStyleRoundedRect;
     [self.view addSubview:paramsfield];
     paramsfield.text = @"devtime";
-    paramsview = [[UITextView alloc]initWithFrame:CGRectMake(10, 290, 640, 250) textContainer:nil];
+    paramsview = [[UITextView alloc]initWithFrame:CGRectMake(10, 290, 640, 50) textContainer:nil];
     paramsview.font = [UIFont fontWithName:@"Arial" size:14.0f];
     paramsview.delegate = self;
     [self.view addSubview:paramsview];
@@ -92,7 +98,7 @@
 - (void)devinfobtnClick:(UIButton *)btn{
     dispatch_async(networkQueue, ^{
         [deviceservice dev_info:_BLDeviceinfo namefieldtext:namefield.text andBlock:^(BOOL ret, NSDictionary *dic) {
-            DLog(@"%@",dic);
+            DLog(@"修改设备信息%@",dic);
         }];
     });
 }
@@ -107,7 +113,7 @@
                     onandoff.text = deviceservice.onandoff?@"开":@"关";
                 });
             }else{
-                DLog(@"%@",dic);
+                DLog(@"插座开关状态%@",dic);
             }
         }];
     });
@@ -125,7 +131,7 @@
             if (ret) {
                 [self onandoffstate];
             }
-            DLog(@"%@",dic);
+            DLog(@"插座开关%@",dic);
         }];
     });
 }
@@ -154,10 +160,24 @@
                         paramsview.text = @"空";
                     }
                 }
-                DLog(@"%@",dic);
+                DLog(@"插座时间%@",dic);
             });
         }];
                            
+    });
+}
+
+//插座定时
+- (void)devtskbtnClick:(UIButton *)btn{
+    dispatch_async(networkQueue, ^{
+        //设置定时
+        [deviceservice dev_ctrlsetpertsk:_BLDeviceinfo andBlock:^(BOOL ret, NSDictionary *dic) {
+            DLog(@"设置定时%@",dic);
+        }];
+        //查询定时
+        [deviceservice dev_ctrltsk:_BLDeviceinfo andBlock:^(BOOL ret, NSDictionary *dic) {
+            DLog(@"查询定时%@",dic);
+        }];
     });
 }
 

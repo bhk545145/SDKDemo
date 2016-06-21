@@ -54,7 +54,7 @@
             NSArray *devicelist = [[responseData objectFromJSONData] objectForKey:@"list"];
             [self devicelist:devicelist];
         }else{
-            DLog(@"%@",requestData);
+            DLog(@"获取局域网信息失败%@",requestData);
         }
     });
 }
@@ -142,7 +142,7 @@
         NSString *requestData = [api devicePair:devInfo desc:descStr];
         NSData *responseData = [requestData dataUsingEncoding:NSUTF8StringEncoding];
         if ([[[responseData objectFromJSONData] objectForKey:@"status"] intValue] == 0) {
-            DLog(@"%@",requestData);
+            DLog(@"设备配对%@",requestData);
             info.deviceid = [[responseData objectFromJSONData] objectForKey:@"id"];
             info.devicekey = [[responseData objectFromJSONData] objectForKey:@"key"];
             [info.allkeys setObject:info.deviceid forKey:@"id"];
@@ -155,7 +155,7 @@
             //下载脚本
             [self deviceGetResourceToken:ACCOUNT_ID accountsession:ACCOUNT_SESSION productpid:info.pid resourcestype:@1 data:[NSDictionary dictionary] info:info];
         }else{
-            DLog(@"%@",requestData);
+            DLog(@"配对失败%@",requestData);
             dispatch_async(dispatch_get_main_queue(), ^{
                 alert = [alert initWithTitle:@"Error" message:@"配对超时" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
                 [alert show];
@@ -201,9 +201,9 @@
         NSString *requestData = [api deviceBindWithServer:[[NSString alloc] initWithData:descData encoding:NSUTF8StringEncoding] desc:descStr];
         NSData *responseData = [requestData dataUsingEncoding:NSUTF8StringEncoding];
         if ([[[responseData objectFromJSONData] objectForKey:@"status"] intValue] == 0) {
-            DLog(@"%@",requestData);
+            DLog(@"绑定设备%@",requestData);
         }else{
-            DLog(@"%@",requestData);
+            DLog(@"绑定设备失败%@%@",[[devlist objectAtIndex:0] valueForKey:@"did"],requestData);
         }
     });
 }
@@ -221,13 +221,13 @@
         NSString *requestData = [api deviceGetResourcesToken:[[NSString alloc] initWithData:descData encoding:NSUTF8StringEncoding] desc:[NSString stringWithFormat:@"{\"account_id\":\"%@\"}", ACCOUNT_ID]];
         NSData *responseData = [requestData dataUsingEncoding:NSUTF8StringEncoding];
         if ([[[responseData objectFromJSONData] objectForKey:@"status"] intValue] == 0) {
-            DLog(@"%@",requestData);
+            DLog(@"脚本地址%@",requestData);
             dispatch_async(dispatch_get_main_queue(), ^{
                 NSString *downloadUrl = [[[responseData objectFromJSONData]objectForKey:@"data"] objectForKey:@"url"];
                 [self download:downloadUrl pid:productpid info:info];
             });
         }else{
-            DLog(@"%@",requestData);
+            DLog(@"脚本地址获取失败%@",requestData);
         }
     });
 }
@@ -253,10 +253,9 @@
         if (reqblock.responseStatusCode == 200)
         {
             NSString *filepath = [filepathFolder stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.script", pid]];
-            DLog(@"filepath: %@", filepath);
+            DLog(@"脚本地址: %@", filepath);
             if ([reqblock.responseData writeToFile:filepath atomically:YES])
             {
-                DLog(@"%@",[reqblock.responseData objectFromJSONData]);
                 //获取设备的 profile 信息
                 info.downloadurl = downloadUrl;
                 [info.allkeys setObject:info.deviceid forKey:@"id"];
@@ -295,7 +294,7 @@
         NSString *devProfileResult = [api deviceProfile:[[NSString alloc] initWithData:devData encoding:NSUTF8StringEncoding] subdev:subdevInfo desc:descStr];
         NSDictionary *devProfileDic = [NSJSONSerialization JSONObjectWithData:[devProfileResult dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableLeaves error:nil];
         NSDictionary *selectDevProfile = devProfileDic[@"profile"];
-        DLog(@"%@",selectDevProfile);
+        DLog(@"设备profile信息%@",selectDevProfile);
     });
 }
 @end

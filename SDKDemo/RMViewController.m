@@ -68,7 +68,7 @@
 - (IBAction)RMsend:(id)sender {
     dispatch_async(networkQueue, ^{
         [deviceservice RMdev_ctrlIrdaSet:_BLDeviceinfo params:@"irda" status:self.Irdatxt.text andBlock:^(BOOL ret, NSDictionary *dic) {
-            DLog(@"%@",dic);
+            DLog(@"RM发射%@",dic);
         }];
     });
 }

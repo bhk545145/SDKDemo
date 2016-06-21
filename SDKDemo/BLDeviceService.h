@@ -68,4 +68,18 @@
  *  @param block        返回结果
  */
 - (void)RMdev_ctrlIrdaSet:(BLDeviceInfo *)BLDeviceInfo params:(NSString *)params status:(NSString *)status andBlock:(void(^)(BOOL ret, NSDictionary *dic))block;
+/**
+ *  插座定时
+ *
+ *  @param BLDeviceInfo 设备模型
+ *  @param block        返回结果
+ */
+- (void)dev_ctrltsk:(BLDeviceInfo *)BLDeviceInfo andBlock:(void(^)(BOOL ret, NSDictionary *dic))block;
+/**
+ *  插座设置定时
+ *
+ *  @param BLDeviceInfo 设备模型
+ *  @param block        返回结果
+ */
+- (void)dev_ctrlsetpertsk:(BLDeviceInfo *)BLDeviceInfo andBlock:(void(^)(BOOL ret, NSDictionary *dic))block;
 @end
