@@ -1,0 +1,15 @@
+{
+    "data":
+    [
+         {
+         "menuName":"str_main_help_and_feedback",
+         "imageName":"help",
+         "url":"HelpAndFeedBackViewController"
+         },
+         {
+         "menuName":"str_main_settings",
+         "imageName":"setting",
+         "url":"SetupViewController"
+         }
+	]
+}

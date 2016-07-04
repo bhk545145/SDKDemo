@@ -169,11 +169,11 @@
 {
     if (buttonIndex == 1) {
         BLDeviceInfo *info = _deviceArray[alertView.tag];
-        if(info.type == 10024 || info.type == 10016 || info.type == 10001){
+        if(info.type == 10024 || info.type == 10016 || info.type == 10001 || info.type == 10124){
             SPDeviceControl *devicecontrol = [[SPDeviceControl alloc]init];
             devicecontrol.BLDeviceinfo = info;
             [self.navigationController pushViewController:devicecontrol animated:YES];
-        }else if (info.type == 10026){
+        }else if (info.type == 10026 || info.type == 10002){
             RMViewController *RMController = [[RMViewController alloc]init];
             RMController.BLDeviceinfo = info;
             [self.navigationController pushViewController:RMController animated:YES];

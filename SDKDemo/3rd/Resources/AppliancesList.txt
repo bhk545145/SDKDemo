@@ -1,0 +1,341 @@
+{
+
+"bigicon" : "http:\/\/econtrol.broadlink.com.cn\/ec4appsysinfo\/model\/other\/sp2-big.png",
+
+"smallicon" : "http:\/\/econtrol.broadlink.com.cn\/ec4appsysinfo\/model\/other\/sp-small.png",
+
+"appliancelist" : [
+
+{
+
+"openicon" : "http:\/\/econtrol.broadlink.com.cn\/ec4appsysinfo\/model\/action\/heater_home_big_on.png",
+
+"icon" : "http:\/\/econtrol.broadlink.com.cn\/ec4appsysinfo\/model\/action\/heater_home_big_off.png",
+
+"closeicon" : "http:\/\/econtrol.broadlink.com.cn\/ec4appsysinfo\/model\/action\/heater_home_big_off.png",
+
+"name" : "热水器",
+
+"actions" : [
+
+{
+
+"highlighticon" : "http:\/\/econtrol.broadlink.com.cn\/ec4appsysinfo\/model\/actiontype\/switch.png",
+
+"order" : 0,
+
+"lowlighticon" : "http:\/\/econtrol.broadlink.com.cn\/ec4appsysinfo\/model\/actiontype\/func_power.png",
+
+"name" : "开关",
+
+"type" : 0
+
+}
+]
+
+},
+
+{
+
+"openicon" : "http:\/\/econtrol.broadlink.com.cn\/ec4appsysinfo\/model\/action\/kettle_home_big_on.png",
+
+"icon" : "http:\/\/econtrol.broadlink.com.cn\/ec4appsysinfo\/model\/action\/kettle_home_big_off.png",
+
+"closeicon" : "http:\/\/econtrol.broadlink.com.cn\/ec4appsysinfo\/model\/action\/kettle_home_big_off.png",
+
+"name" : "电水壶",
+
+"actions" : [
+
+{
+
+"highlighticon" : "http:\/\/econtrol.broadlink.com.cn\/ec4appsysinfo\/model\/actiontype\/switch.png",
+
+"order" : 0,
+
+"lowlighticon" : "http:\/\/econtrol.broadlink.com.cn\/ec4appsysinfo\/model\/actiontype\/func_power.png",
+
+"name" : "开关",
+
+"type" : 0
+
+}
+
+]
+
+},
+
+{
+
+"openicon" : "http:\/\/econtrol.broadlink.com.cn\/ec4appsysinfo\/model\/action\/lamp_home_big_on.png",
+
+"icon" : "http:\/\/econtrol.broadlink.com.cn\/ec4appsysinfo\/model\/action\/lamp_home_big_off.png",
+
+"closeicon" : "http:\/\/econtrol.broadlink.com.cn\/ec4appsysinfo\/model\/action\/lamp_home_big_off.png",
+
+"name" : "灯",
+
+"actions" : [
+
+{
+
+"highlighticon" : "http:\/\/econtrol.broadlink.com.cn\/ec4appsysinfo\/model\/actiontype\/switch.png",
+
+"order" : 0,
+
+"lowlighticon" : "http:\/\/econtrol.broadlink.com.cn\/ec4appsysinfo\/model\/actiontype\/func_power.png",
+
+"name" : "开关",
+
+"type" : 0
+
+}
+]
+
+},
+
+{
+
+"openicon" : "http:\/\/econtrol.broadlink.com.cn\/ec4appsysinfo\/model\/action\/router_home_big_on.png",
+
+"icon" : "http:\/\/econtrol.broadlink.com.cn\/ec4appsysinfo\/model\/action\/router_home_big_off.png",
+
+"closeicon" : "http:\/\/econtrol.broadlink.com.cn\/ec4appsysinfo\/model\/action\/router_home_big_off.png",
+
+"name" : "路由器",
+
+"actions" : [
+
+{
+
+"highlighticon" : "http:\/\/econtrol.broadlink.com.cn\/ec4appsysinfo\/model\/actiontype\/switch.png",
+
+"order" : 0,
+
+"lowlighticon" : "http:\/\/econtrol.broadlink.com.cn\/ec4appsysinfo\/model\/actiontype\/func_power.png",
+
+"name" : "开关",
+
+"type" : 0
+
+}
+
+]
+
+},
+
+{
+
+"openicon" : "http:\/\/econtrol.broadlink.com.cn\/ec4appsysinfo\/model\/action\/fan_home_big_on.png",
+
+"icon" : "http:\/\/econtrol.broadlink.com.cn\/ec4appsysinfo\/model\/action\/fan_home_big_off.png",
+
+"closeicon" : "http:\/\/econtrol.broadlink.com.cn\/ec4appsysinfo\/model\/action\/fan_home_big_off.png",
+
+"name" : "电风扇",
+
+"actions" : [
+
+{
+
+"highlighticon" : "http:\/\/econtrol.broadlink.com.cn\/ec4appsysinfo\/model\/actiontype\/switch.png",
+
+"order" : 0,
+
+"lowlighticon" : "http:\/\/econtrol.broadlink.com.cn\/ec4appsysinfo\/model\/actiontype\/func_power.png",
+
+"name" : "开关",
+
+"type" : 0
+
+}
+
+]
+
+},
+
+{
+
+"openicon" : "http:\/\/econtrol.broadlink.com.cn\/ec4appsysinfo\/model\/action\/cooker_home_big_on.png",
+
+"icon" : "http:\/\/econtrol.broadlink.com.cn\/ec4appsysinfo\/model\/action\/cooker_home_big_off.png",
+
+"closeicon" : "http:\/\/econtrol.broadlink.com.cn\/ec4appsysinfo\/model\/action\/cooker_home_big_off.png",
+
+"name" : "电饭煲",
+
+"actions" : [
+
+{
+
+"highlighticon" : "http:\/\/econtrol.broadlink.com.cn\/ec4appsysinfo\/model\/actiontype\/switch.png",
+
+"order" : 0,
+
+"lowlighticon" : "http:\/\/econtrol.broadlink.com.cn\/ec4appsysinfo\/model\/actiontype\/func_power.png",
+
+"name" : "开关",
+
+"type" : 0
+
+}
+
+]
+
+},
+
+{
+
+"openicon" : "http:\/\/econtrol.broadlink.com.cn\/ec4appsysinfo\/model\/action\/humidifier_home_big_on.png",
+
+"icon" : "http:\/\/econtrol.broadlink.com.cn\/ec4appsysinfo\/model\/action\/humidifier_home_big_off.png",
+
+"closeicon" : "http:\/\/econtrol.broadlink.com.cn\/ec4appsysinfo\/model\/action\/humidifier_home_big_off.png",
+
+"name" : "加湿器",
+
+"actions" : [
+
+{
+
+"highlighticon" : "http:\/\/econtrol.broadlink.com.cn\/ec4appsysinfo\/model\/actiontype\/switch.png",
+
+"order" : 0,
+
+"lowlighticon" : "http:\/\/econtrol.broadlink.com.cn\/ec4appsysinfo\/model\/actiontype\/func_power.png",
+
+"name" : "开关",
+
+"type" : 0
+
+}
+
+]
+
+},
+
+{
+
+"openicon" : "http:\/\/econtrol.broadlink.com.cn\/ec4appsysinfo\/model\/action\/water_home_big_on.png",
+
+"icon" : "http:\/\/econtrol.broadlink.com.cn\/ec4appsysinfo\/model\/action\/water_home_big_off.png",
+
+"closeicon" : "http:\/\/econtrol.broadlink.com.cn\/ec4appsysinfo\/model\/action\/water_home_big_off.png",
+
+"name" : "饮水机",
+
+"actions" : [
+
+{
+
+"highlighticon" : "http:\/\/econtrol.broadlink.com.cn\/ec4appsysinfo\/model\/actiontype\/switch.png",
+
+"order" : 0,
+
+"lowlighticon" : "http:\/\/econtrol.broadlink.com.cn\/ec4appsysinfo\/model\/actiontype\/func_power.png",
+
+"name" : "开关",
+
+"type" : 0
+
+}
+
+]
+
+},
+
+{
+
+"openicon" : "http:\/\/econtrol.broadlink.com.cn\/ec4appsysinfo\/model\/action\/fishtank_home_big_on.png",
+
+"icon" : "http:\/\/econtrol.broadlink.com.cn\/ec4appsysinfo\/model\/action\/fishtank_home_big_off.png",
+
+"closeicon" : "http:\/\/econtrol.broadlink.com.cn\/ec4appsysinfo\/model\/action\/fishtank_home_big_off.png",
+
+"name" : "鱼缸",
+
+"actions" : [
+
+{
+
+"highlighticon" : "http:\/\/econtrol.broadlink.com.cn\/ec4appsysinfo\/model\/actiontype\/switch.png",
+
+"order" : 0,
+
+"lowlighticon" : "http:\/\/econtrol.broadlink.com.cn\/ec4appsysinfo\/model\/actiontype\/func_power.png",
+
+"name" : "开关",
+
+"type" : 0
+
+}
+
+]
+
+},
+
+{
+
+"openicon" : "http:\/\/econtrol.broadlink.com.cn\/ec4appsysinfo\/model\/action\/camera_home_big_on.png",
+
+"icon" : "http:\/\/econtrol.broadlink.com.cn\/ec4appsysinfo\/model\/action\/camera_home_big_off.png",
+
+"closeicon" : "http:\/\/econtrol.broadlink.com.cn\/ec4appsysinfo\/model\/action\/camera_home_big_off.png",
+
+"name" : "摄像头",
+
+"actions" : [
+
+{
+
+"highlighticon" : "http:\/\/econtrol.broadlink.com.cn\/ec4appsysinfo\/model\/actiontype\/switch.png",
+
+"order" : 0,
+
+"lowlighticon" : "http:\/\/econtrol.broadlink.com.cn\/ec4appsysinfo\/model\/actiontype\/func_power.png",
+
+"name" : "开关",
+
+"type" : 0
+
+}
+
+]
+
+},
+
+{
+
+"openicon" : "http:\/\/econtrol.broadlink.com.cn\/ec4appsysinfo\/model\/action\/timer_home_big_on.png",
+
+"icon" : "http:\/\/econtrol.broadlink.com.cn\/ec4appsysinfo\/model\/action\/timer_home_big_off.png",
+
+"closeicon" : "http:\/\/econtrol.broadlink.com.cn\/ec4appsysinfo\/model\/action\/timer_home_big_off.png",
+
+"name" : "通用",
+
+"actions" : [
+
+{
+
+"highlighticon" : "http:\/\/econtrol.broadlink.com.cn\/ec4appsysinfo\/model\/actiontype\/switch.png",
+
+"order" : 0,
+
+"lowlighticon" : "http:\/\/econtrol.broadlink.com.cn\/ec4appsysinfo\/model\/actiontype\/func_power.png",
+
+"name" : "开关",
+
+"type" : 0
+
+}
+
+]
+
+}
+
+],
+
+"pid" : "HM_Broadlink_BL-PS-123"
+
+}

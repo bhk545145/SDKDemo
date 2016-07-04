@@ -1,0 +1,23 @@
+{
+    "data":
+    [
+        {
+            "menuName":"str_appliances_more_now",
+            "normalImageName":"more_now_normal",
+            "selectedImageName":"more_now_highlight",
+            "url":""
+        },
+        {
+            "menuName":"str_appliances_more_timing",
+            "normalImageName":"more_timer_normal",
+            "selectedImageName":"more_timer_highlight",
+            "url":""
+        },
+        {
+             "menuName":"str_appliances_more_history",
+             "normalImageName":"more_history_normal",
+             "selectedImageName":"more_history_highlight",
+             "url":""
+        }
+     ]
+}
