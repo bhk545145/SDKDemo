@@ -35,34 +35,10 @@
     UIPackPageWebView = [[UIWebView alloc]init];
     UIPackPageWebView.frame = self.view.frame;
     [self.view addSubview:UIPackPageWebView];
-    
-    ////////////////////////////////////////////////copy cordova.js begin
     //取document目录
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     filepathFolder = [paths objectAtIndex:0];
-//    NSFileManager *fileManager = [NSFileManager defaultManager];
-    //判断资源文件目录是否存在cordova.js文件，如果不存在拷贝
-//    NSError *error;
-//    NSString *directoryJs = [NSString stringWithFormat:@"%@/cordova.js", filepathFolder];
-//    NSString *encryptDstFile = [SecurityUtil encryptMD5File:directoryJs];
-//    NSString *path1 = [[NSBundle mainBundle]pathForResource:@"cordova.js"  ofType:nil];
-//    NSString *encryptSourFile = [SecurityUtil encryptMD5File:path1];
-//    if (![encryptDstFile isEqualToString:encryptSourFile])
-//    {
-//        BOOL success = [fileManager copyItemAtPath:path1 toPath:directoryJs error:&error];
-//        if (success)
-//        {
-//            DLog(@"cordova.js文件拷贝成功。");
-//        }
-//        else
-//        {
-//            DLog(@"cordova.js文件拷贝失败。");
-//        }
-//    }
-    ////////////////////////////////////////////////copy cordova.js end
-    
     //加载UI包
-    
     NSString *pathstr = [NSString stringWithFormat:@"/%@/zh-cn/app.html",_BLDeviceInfo.pid];
     NSString* path = [filepathFolder stringByAppendingPathComponent:pathstr];
     NSURL* url = [NSURL fileURLWithPath:path];
@@ -120,7 +96,7 @@
     time_t timestamp = time(NULL);
     NSString *sign = [self sha1:[NSString stringWithFormat:@"%@%ldbroadlinkDNA@", downloadUrl, timestamp]];
     
-    NSDictionary *body = [NSDictionary dictionaryWithObjectsAndKeys:@"download", @"action", @"ui", @"type", pid,@"pid",[NSDictionary dictionaryWithObjectsAndKeys:@"bl",@"platform",@"2",@"uiid",nil], @"extrainfo", nil];
+    NSDictionary *body = [NSDictionary dictionaryWithObjectsAndKeys:@"download", @"action", @"ui", @"type", pid,@"pid",[NSDictionary dictionaryWithObjectsAndKeys:@"bl",@"platform",@"125",@"uiid",nil], @"extrainfo", nil];
     NSMutableData *bodydata = [NSMutableData dataWithData:[NSJSONSerialization dataWithJSONObject:body options:NSJSONWritingPrettyPrinted error:nil]];
     
     ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:downloadUrl]];
